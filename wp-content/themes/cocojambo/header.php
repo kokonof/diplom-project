@@ -46,4 +46,4 @@
 			</div>
 		</div>
 	</header>
-	<div class="b-example-divider"></div><?php
+	<div class="b-example-divider"></div>
