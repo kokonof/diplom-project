@@ -6,14 +6,14 @@
             <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
         </div>
     </div>
-    <div class="container-fluid pb-3">
+    <div class="container pb-3">
         <div class="d-grid gap-4" style="grid-template-columns: 3fr 1fr;">
 
-            <div class="bg-body-tertiary border rounded-3">
+            <div class="bg-body-tertiary rounded-3">
                 <div class="row mb-2">
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <div class="col-md-6">
-                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative">
                             <div class="col p-4 d-flex flex-column position-static">
                                 <strong class="d-inline-block mb-2 text-primary"><?php the_author(); ?></strong>
                                 <h3 class="mb-0"><?php the_ID(); the_title(); ?></h3>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="bg-body-tertiary border rounded-3">
-                <div class="position-sticky" style="top: 2rem;">
+                <div class="position-sticky shadow" style="top: 2rem;">
                     <div class="p-4 mb-3 bg-body-tertiary rounded">
                         <h4 class="fst-italic">About</h4>
                         <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
