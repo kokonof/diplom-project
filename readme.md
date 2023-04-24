@@ -1,3 +1,3 @@
 Сайт школи на вордпрес димломна робота
 
-в files/wordpress.sql дамп бази 
+в files/wordpress.sql дамп бази
