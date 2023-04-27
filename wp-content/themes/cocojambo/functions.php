@@ -6,11 +6,11 @@ add_action('after_setup_theme', 'add_post_thumbnails_setup');
 add_filter( 'navigation_markup_template', 'navigation_markup_template_filter', 10, 2 );
 function cocojambo_require_scripts() {
 	wp_enqueue_style('cocojambo-style-bootstrap',
-		get_template_directory_uri() . '/assets/css/bootstrap.css');
+		get_template_directory_uri() . '/assets/css/bootstrap.min.css');
 	wp_enqueue_style('cocojambo-style', get_stylesheet_uri());
 
 	wp_enqueue_script('cocojambo-script-bootstrap',
-		get_template_directory_uri() . '/assets/js/bootstrap.js');
+		get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js');
 }
 function add_post_thumbnails_setup() {
 	add_theme_support( 'post-thumbnails' );
