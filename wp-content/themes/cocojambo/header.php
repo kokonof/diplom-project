@@ -3,19 +3,22 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php wp_get_document_title(); ?></title>
+	<title><?php echo wp_get_document_title(); ?></title>
 	<?php wp_head(); ?>
 </head>
-<body>
-<div class="container">
-	<header class="p-3 mb-3 border-bottom">
-		<div class="container">
-			<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
-				<a href="<?php echo home_url(); ?>" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-					<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-					     xmlns:xlink="http://www.w3.org/1999/xlink"
-					     width="40px" height="40px" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
-					     xml:space="preserve">
+<div>
+	<div class="container">
+		<header class="p-3 mb-3">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+				        aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+				     xmlns:xlink="http://www.w3.org/1999/xlink"
+				     width="40px" height="40px" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+				     xml:space="preserve">
 						<g>
 							<g>
 								<path fill="#B4CCB9" d="M32.516,53.933C32.347,53.978,32.173,54,32,54s-0.347-0.022-0.516-0.067L2,46.07v1.954l30,7.941l30-7.941
@@ -25,7 +28,8 @@
 									c1.003-0.435,1.709-1.403,1.788-2.546l1.987-0.53L62,51.999v-1.906l-29.744,7.874C32.172,57.989,32.086,58,32,58z"/>
 							</g>
 							<g>
-								<polygon fill="#F9EBB2" points="2.001,2.001 1.998,2.001 2,44 31,51.733 31,9.733 2.001,2 		"/>
+								<polygon fill="#F9EBB2"
+								         points="2.001,2.001 1.998,2.001 2,44 31,51.733 31,9.733 2.001,2 		"/>
 								<polygon fill="#F9EBB2" points="33,9.733 33,51.733 62,44 62,2 		"/>
 							</g>
 							<polygon opacity="0.15" fill="#231F20" points="33,9.733 33,51.733 62,44 62,2 	"/>
@@ -66,36 +70,34 @@
 							</g>
 						</g>
 					</svg>
-					<span class="menu-header"><?php bloginfo( 'name' ); ?></span>
-				</a>
-
-				<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-					<li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
-					<li><a href="#" class="nav-link px-2 link-body-emphasis">Inventory</a></li>
-					<li><a href="#" class="nav-link px-2 link-body-emphasis">Customers</a></li>
-					<li><a href="#" class="nav-link px-2 link-body-emphasis">Products</a></li>
-				</ul>
-
-				<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-					<input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+				<?php wp_nav_menu( [
+					'theme_location'  => 'header_menu',
+					'container_class' => 'collapse navbar-collapse',
+					'container_id'    => '',
+					'menu_class'      => 'navbar-nav me-auto mb-2 mb-lg-0',
+					'walker'          => new Cocojambo_Walker
+				] ); ?>
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+					<div class="dropdown text-end">
+						<a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
+						   data-bs-toggle="dropdown"
+						   aria-expanded="false">
+							<img src="https://github.com/mdo.png" alt="mdo" width="32" height="32"
+							     class="rounded-circle">
+						</a>
+						<ul class="dropdown-menu text-small">
+							<li><a class="dropdown-item" href="#">New project...</a></li>
+							<li><a class="dropdown-item" href="#">Settings</a></li>
+							<li><a class="dropdown-item" href="#">Profile</a></li>
+							<li>
+								<hr class="dropdown-divider">
+							</li>
+							<li><a class="dropdown-item" href="#">Sign out</a></li>
+						</ul>
+					</div>
 				</form>
-
-				<div class="dropdown text-end">
-					<a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
-					   aria-expanded="false">
-						<img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-					</a>
-					<ul class="dropdown-menu text-small">
-						<li><a class="dropdown-item" href="#">New project...</a></li>
-						<li><a class="dropdown-item" href="#">Settings</a></li>
-						<li><a class="dropdown-item" href="#">Profile</a></li>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
-						<li><a class="dropdown-item" href="#">Sign out</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</header>
-	<div class="b-example-divider"></div>
+	</div>
+</div>
+<div class="b-example-divider"></div>

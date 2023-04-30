@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/class/Cocojambo_Walker.php';
 add_action('wp_enqueue_scripts', 'cocojambo_require_scripts');
 add_action('after_setup_theme', 'add_post_thumbnails_setup');
 
@@ -14,6 +14,11 @@ function cocojambo_require_scripts() {
 }
 function add_post_thumbnails_setup() {
 	add_theme_support( 'post-thumbnails' );
+	register_nav_menus([
+		'header_menu' => 'Верхнє меню',
+		'right_menu' => 'Меню з права',
+		'footer_menu' => 'Нижнє меню',
+	]);
 }
 
 function navigation_markup_template_filter( $template, $css_class ): string {
