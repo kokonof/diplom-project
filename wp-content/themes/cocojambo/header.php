@@ -73,7 +73,7 @@
 				<?php wp_nav_menu( [
 					'theme_location'  => 'header_menu',
 					'container_class' => 'collapse navbar-collapse',
-					'container_id'    => '',
+					'container_id'    => 'navbarSupportedContent',
 					'menu_class'      => 'navbar-nav me-auto mb-2 mb-lg-0',
 					'walker'          => new Cocojambo_Walker
 				] ); ?>
