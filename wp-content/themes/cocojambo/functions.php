@@ -15,8 +15,11 @@ function cocojambo_require_scripts() {
 function cocojambo_add_post_thumbnails_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'custom-logo', [
-		'width' =>'40',
-		'height' =>'40'
+		'width' =>'156',
+		'height' =>'46'
+	]);
+	add_theme_support( 'custom-background', [
+		'default-color' =>'ffffff',
 	]);
 	register_nav_menus([
 		'header_menu' => 'Верхнє меню',
