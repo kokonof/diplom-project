@@ -21,6 +21,9 @@ function cocojambo_add_post_thumbnails_setup() {
 	add_theme_support( 'custom-background', [
 		'default-color' =>'ffffff',
 	]);
+	add_theme_support( 'custom-header', [
+		'default-color' =>'ffffff',
+	]);
 	register_nav_menus([
 		'header_menu' => 'Верхнє меню',
 		'right_menu' => 'Меню з права',
