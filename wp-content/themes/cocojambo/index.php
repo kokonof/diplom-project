@@ -52,7 +52,7 @@
                                 <h3 class="mb-0"><?php the_ID(); the_title(); ?></h3>
                                 <div class="mb-1 text-body-secondary"><?php the_date(); ?></div>
                                 <p class="card-text mb-auto"><?php the_excerpt(); ?></p>
-                                <a href="<?php the_permalink(); ?>" class="stretched-link">Продовжити читання...</a>
+                                <a href="<?php the_permalink(); ?>" class="stretched-link"><?php echo __('Continue reading...', 'cocojambo') ?></a>
                             </div>
                             <div class="col-auto d-none d-lg-block">
                                 <?php the_post_thumbnail('thumbnail') ?>

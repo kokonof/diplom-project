@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/class/Cocojambo_Walker.php';
 add_action('wp_enqueue_scripts', 'cocojambo_require_scripts');
-add_action('after_setup_theme', 'cocojambo_add_post_thumbnails_setup');
+add_action('after_setup_theme', 'cocojambo_setup');
 add_action('widgets_init', 'cocojambo_widgets_init');
 add_action('customize_register', 'cocojambo_customize_register');
 add_action('wp_head', 'cocojambo_customize_css');
@@ -22,7 +22,8 @@ function cocojambo_require_scripts() {
 	wp_enqueue_script('cocojambo-script-bootstrap',
 		get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js');
 }
-function cocojambo_add_post_thumbnails_setup() {
+function cocojambo_setup() {
+	load_theme_textdomain('cocojambo', get_template_directory() . '/languages');
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'custom-logo', [
 		'width' =>'156',

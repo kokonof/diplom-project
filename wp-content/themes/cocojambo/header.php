@@ -27,10 +27,11 @@
 				] ); ?>
 
 				<p class="header-phone <?php  if (false === get_theme_mod('cocojambo_show_site_phone'))  echo ' hidden-header-phone'; ?>">
-					<span> Телефон : <?php echo  get_theme_mod('cocojambo_site_phone')?> </span> </p>
+					<span> <?php echo __('Phone:', 'cocojambo') ?> <?php echo  get_theme_mod('cocojambo_site_phone')?> </span> </p>
 				<form class="d-flex">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">Search</button>
+					<input class="form-control me-2" type="search" placeholder="<?php echo __('Search', 'cocojambo') ?>" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit"><?php echo __('Search', 'cocojambo') ?></button>
+				</form>
 					<div class="dropdown text-end">
 						<a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
 						   data-bs-toggle="dropdown"
@@ -39,7 +40,7 @@
 							     class="rounded-circle">
 						</a>
 						<ul class="dropdown-menu text-small">
-							<li><a class="dropdown-item" href="#">New project...</a></li>
+							<li><a class="dropdown-item" href="#"><?php echo __('New project', 'cocojambo') ?></a></li>
 							<li><a class="dropdown-item" href="#">Settings</a></li>
 							<li><a class="dropdown-item" href="#">Profile</a></li>
 							<li>
@@ -48,7 +49,7 @@
 							<li><a class="dropdown-item" href="#">Sign out</a></li>
 						</ul>
 					</div>
-				</form>
+
 			</div>
 
 
