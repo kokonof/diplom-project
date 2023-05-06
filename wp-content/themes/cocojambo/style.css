@@ -73,3 +73,15 @@ nav.navigation{
     border-radius: 0.25rem !important;
     margin-bottom: 20px;
 }
+
+.header-phone {
+    margin: 5px;
+}
+
+.show-header-phone {
+    display: block;
+}
+
+.hidden-header-phone {
+    display: none;
+}

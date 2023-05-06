@@ -14,35 +14,44 @@
 			        aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<?php the_custom_logo();?>
-			<?php wp_nav_menu( [
-				'theme_location'  => 'header_menu',
-				'container_class' => 'collapse navbar-collapse',
-				'container_id'    => 'navbarSupportedContent',
-				'menu_class'      => 'navbar-nav me-auto mb-2 mb-lg-0',
-				'walker'          => new Cocojambo_Walker
-			] ); ?>
-			<form class="d-flex">
-				<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-success" type="submit">Search</button>
-				<div class="dropdown text-end">
-					<a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
-					   data-bs-toggle="dropdown"
-					   aria-expanded="false">
-						<img src="https://github.com/mdo.png" alt="mdo" width="32" height="32"
-						     class="rounded-circle">
-					</a>
-					<ul class="dropdown-menu text-small">
-						<li><a class="dropdown-item" href="#">New project...</a></li>
-						<li><a class="dropdown-item" href="#">Settings</a></li>
-						<li><a class="dropdown-item" href="#">Profile</a></li>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
-						<li><a class="dropdown-item" href="#">Sign out</a></li>
-					</ul>
-				</div>
-			</form>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<?php the_custom_logo();?>
+				<?php wp_nav_menu( [
+					'theme_location'  => 'header_menu',
+					'container'       => '',
+//					'container_class' => 'collapse navbar-collapse',
+//					'container_id'    => 'navbarSupportedContent',
+					'menu_class'      => 'navbar-nav me-auto mb-2 mb-lg-0',
+					'walker'          => new Cocojambo_Walker
+				] ); ?>
+
+				<p class="header-phone <?php  if (false === get_theme_mod('cocojambo_show_site_phone'))  echo ' hidden-header-phone'; ?>">
+					<span> Телефон : <?php echo  get_theme_mod('cocojambo_site_phone')?> </span> </p>
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+					<div class="dropdown text-end">
+						<a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
+						   data-bs-toggle="dropdown"
+						   aria-expanded="false">
+							<img src="https://github.com/mdo.png" alt="mdo" width="32" height="32"
+							     class="rounded-circle">
+						</a>
+						<ul class="dropdown-menu text-small">
+							<li><a class="dropdown-item" href="#">New project...</a></li>
+							<li><a class="dropdown-item" href="#">Settings</a></li>
+							<li><a class="dropdown-item" href="#">Profile</a></li>
+							<li>
+								<hr class="dropdown-divider">
+							</li>
+							<li><a class="dropdown-item" href="#">Sign out</a></li>
+						</ul>
+					</div>
+				</form>
+			</div>
+
+
 		</nav>
 	</header>
 <div class="b-example-divider"></div>
