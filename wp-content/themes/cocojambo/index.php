@@ -39,6 +39,24 @@
             </button>
         </div>
     </div>
+<?php
+//$query = new WP_Query('cat=19,13&posts_per_page=-1');
+
+$query = new WP_Query([
+    'cat' => '19,13',
+    'posts_per_page' => '-1',
+    'order' => 'ASC'
+
+]);
+
+
+if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+    ?>
+    <h3><?php the_title();?> </h3>
+<?php endwhile; ?>
+<?php endif; ?>
+<?php wp_reset_postdata();?>
+
     <div class="container pb-3">
         <div class="d-grid gap-4" style="grid-template-columns: 3fr 1fr;">
 
