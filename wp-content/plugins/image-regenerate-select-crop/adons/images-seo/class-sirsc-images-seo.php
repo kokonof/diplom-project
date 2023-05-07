@@ -812,7 +812,7 @@ class SIRSC_Adons_Images_SEO {
 					if ( 'attachment' === $type ) {
 						?>
 						<hr>
-						<h2><?php esc_html_e( 'Attachment Rename Result', 'sirsc' ); ?></h3>
+						<h2><?php esc_html_e( 'Attachment Rename Result', 'sirsc' ); ?></h2>
 						<div id="sirsc_imgseo-images-process-wrap" class="rows has-padd has-top two-columns">
 							<?php self::rename_image_filename( $id, $title, 0, $type ); ?>
 						</div>
