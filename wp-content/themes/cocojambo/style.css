@@ -86,3 +86,6 @@ nav.navigation{
 .hidden-header-phone {
     display: none;
 }
+.post-content {
+    min-height: 270px;
+}

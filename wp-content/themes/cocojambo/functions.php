@@ -17,14 +17,23 @@ add_filter( 'navigation_markup_template',
 function cocojambo_require_scripts() {
 	wp_enqueue_style('cocojambo-style-bootstrap',
 		get_template_directory_uri() . '/assets/css/bootstrap.min.css');
+//	wp_enqueue_style('cocojambo-style-font',
+//		get_template_directory_uri() . '/assets/font/css/all.css');
 	wp_enqueue_style('cocojambo-style', get_stylesheet_uri());
 
 	wp_enqueue_script('cocojambo-script-bootstrap',
 		get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js');
+//	wp_enqueue_script('cocojambo-script-font',
+//		get_template_directory_uri() . '/assets/font/js/all.js');
 }
 function cocojambo_setup() {
 	load_theme_textdomain('cocojambo', get_template_directory() . '/languages');
+	add_theme_support('post-formats', [
+		'aside', 'gallery', 'link', 'image',
+		'quote', 'status', 'video', 'audio', 'chat'
+	]);
 	add_theme_support( 'post-thumbnails' );
+//	add_image_size( 'spec_thumb', 240, 240, false );
 	add_theme_support( 'custom-logo', [
 		'width' =>'156',
 		'height' =>'46'
