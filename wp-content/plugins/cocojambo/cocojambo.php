@@ -17,4 +17,3 @@ $cocojambo_study->convertTitle();
 $cocojambo_study->addPrefixToPostTitle();
 
 $cocojambo_menu = new CocojamboLeftMenu();
-$cocojambo_menu->addMenuItem();

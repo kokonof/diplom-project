@@ -3,7 +3,7 @@
 class CocojamboLeftMenu {
 
 	public function __construct(  ) {
-
+		$this->addMenuItem();
 	}
 
 	public function addMenuItem(  ) {
