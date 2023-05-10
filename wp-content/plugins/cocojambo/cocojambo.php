@@ -28,7 +28,12 @@ function activationPlugin() {
 	$wpdb->query( $query );
 }
 
+function deactivationPlugin() {
+	file_put_contents(__DIR__ . '/log.txt', "Plugin Deactivated\n", FILE_APPEND);
+}
+
 register_activation_hook( __FILE__, 'activationPlugin' );
+register_deactivation_hook( __FILE__, 'deactivationPlugin' );
 
 $cocojambo_study = new CocojamboStudy();
 $cocojambo_study->convertTitle();
