@@ -8,6 +8,14 @@ Author: Волков Гріша
 Author URI:
 */
 
+if (!defined('ABSPATH')) exit;
+
+require_once 'autoload.php';
+
+$cocojambo_study = new CocojamboStudy();
+$cocojambo_study->convertTitle();
+$cocojambo_study->addPrefixToPostTitle();
+
 function add_prefix_menu_item() {
 	add_menu_page(
 		'Мощний плагін', // назва, яка буде відображена в меню
@@ -29,11 +37,3 @@ function add_prefix_to_post() {
 	echo 'Тут інформація про плагін якісь дашборди';
 }
 add_action('admin_menu', 'add_prefix_menu_item');
-function add_prefix_to_post_title($title, $id = null) {
-	if (!is_admin() && 'post' === get_post_type($id)) {
-		$prefix = 'Префікс: '; // вкажіть свій префікс
-		$title = $prefix . $title;
-	}
-	return $title;
-}
-add_filter('the_title', 'add_prefix_to_post_title', 10, 2);
