@@ -6,6 +6,7 @@ Description: Короткий опис про плагін
 Version: 0.0.1
 Author: Волков Гріша
 Author URI:
+Domain Path: /languages
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
