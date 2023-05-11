@@ -29,7 +29,7 @@ class CocojamboLeftMenu {
 	}
 
 	public function addPrefixToPost() {
-		echo 'Тут інформація про плагін якісь дашборди';
+		echo '<div class="wrap"> <h2>Тут інформація про плагін якісь дашборди </h2></div>';
 	}
 
 }

@@ -23,6 +23,7 @@ function cocojambo_require_scripts() {
 
 	wp_enqueue_script('cocojambo-script-bootstrap',
 		get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js');
+	wp_enqueue_script('jquery');
 //	wp_enqueue_script('cocojambo-script-font',
 //		get_template_directory_uri() . '/assets/font/js/all.js');
 }
