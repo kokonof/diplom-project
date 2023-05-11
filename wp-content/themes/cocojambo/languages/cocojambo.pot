@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cocojambo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-06 14:29+0000\n"
+"POT-Creation-Date: 2023-05-11 20:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "cocojambo"
 msgstr ""
 
-#: index.php:55
+#: index.php:91
 msgid "Continue reading..."
 msgstr ""
 
@@ -28,11 +28,11 @@ msgstr ""
 msgid "https://www.linkedin.com/in/romavolkov/"
 msgstr ""
 
-#: header.php:43
+#: header.php:44
 msgid "New project"
 msgstr ""
 
-#: header.php:30
+#: header.php:31
 msgid "Phone:"
 msgstr ""
 
@@ -40,7 +40,7 @@ msgstr ""
 msgid "Roma Volkov"
 msgstr ""
 
-#: header.php:32 header.php:33
+#: header.php:33 header.php:34
 msgid "Search"
 msgstr ""
 

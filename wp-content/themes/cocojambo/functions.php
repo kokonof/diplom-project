@@ -28,7 +28,7 @@ function cocojambo_require_scripts() {
 //		get_template_directory_uri() . '/assets/font/js/all.js');
 }
 function cocojambo_setup() {
-	load_theme_textdomain('cocojambo', get_template_directory() . '/languages');
+	load_theme_textdomain('cocojambo', get_template_directory() . '/languages/');
 	add_theme_support('post-formats', [
 		'aside', 'gallery', 'link', 'image',
 		'quote', 'status', 'video', 'audio', 'chat'

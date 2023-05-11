@@ -1,12 +1,14 @@
 <?php
 /*
-Plugin Name: Cocojambo
-Plugin URI:
-Description: Короткий опис про плагін
+Plugin Name: cocojambo
+Description: Description
 Version: 0.0.1
-Author: Волков Гріша
-Author URI:
-Domain Path: /languages
+Author: Volkov Grisha
+Requires PHP: 7.4
+Text Domain: cocojambo
+Domain Path: /languages/
+Tags: cocojambo
+Text Domain: cocojambo
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,7 +20,7 @@ require_once 'autoload.php';
 
 function activationPlugin() {
 	if ( PHP_MAJOR_VERSION < 7 ) {
-		die( ' Потрібно PHP >= 7' );
+		die( __('Need PHP >= 7','cocojambo') );
 	}
 
 	global $wpdb;
@@ -31,15 +33,22 @@ function activationPlugin() {
 }
 
 function deactivationPlugin() {
-	file_put_contents( COCOJAMBO_PLUGIN_DIR . 'log.txt', "Plugin Deactivated\n", FILE_APPEND );
+	file_put_contents( COCOJAMBO_PLUGIN_DIR . 'log.txt', __("Plugin Deactivated\n"), FILE_APPEND );
 }
 
 register_activation_hook( __FILE__, 'activationPlugin' );
 register_deactivation_hook( __FILE__, 'deactivationPlugin' );
-
+add_action('plugins_loaded', 'loaded_textdomain');
 add_action( 'admin_menu', 'cocojambo_admin_pages' );
 add_action( 'wp_enqueue_scripts', 'cocojambo_scripts_front' );
 add_action( 'admin_enqueue_scripts', 'cocojambo_scripts_admin' );
+
+
+
+function loaded_textdomain() {
+	var_dump(dirname(plugin_basename(__FILE__)) . '/languages/');
+	load_plugin_textdomain('cocojambo');
+}
 
 function cocojambo_admin_pages() {
 

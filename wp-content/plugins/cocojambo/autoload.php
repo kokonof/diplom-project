@@ -5,7 +5,7 @@ spl_autoload_register( 'cocojambo_autoload' );
 function cocojambo_include( $relpath ) {
 	$path = plugin_dir_path( __FILE__ ) . '/' . $relpath;
 	if ( ! file_exists( $path ) ) {
-		$message = 'File not found: ' . $path;
+		$message = __('File not found: ','cocojambo') . $path;
 		throw new Exception( $message . '; additionally src/error/Exception.php not loadable' );
 	}
 
