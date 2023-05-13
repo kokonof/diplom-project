@@ -20,7 +20,7 @@ require_once 'autoload.php';
 
 function activationPlugin() {
 	if ( PHP_MAJOR_VERSION < 7 ) {
-		die( __('Need PHP >= 7','cocojambo') );
+		die( __( 'Need PHP >= 7', 'cocojambo' ) );
 	}
 
 	global $wpdb;
@@ -33,21 +33,42 @@ function activationPlugin() {
 }
 
 function deactivationPlugin() {
-	file_put_contents( COCOJAMBO_PLUGIN_DIR . 'log.txt', __("Plugin Deactivated\n"), FILE_APPEND );
+	file_put_contents( COCOJAMBO_PLUGIN_DIR . 'log.txt', __( "Plugin Deactivated\n" ), FILE_APPEND );
 }
 
 register_activation_hook( __FILE__, 'activationPlugin' );
 register_deactivation_hook( __FILE__, 'deactivationPlugin' );
-add_action('plugins_loaded', 'loaded_textdomain');
+add_action( 'plugins_loaded', 'loaded_textdomain' );
 add_action( 'admin_menu', 'cocojambo_admin_pages' );
 add_action( 'wp_enqueue_scripts', 'cocojambo_scripts_front' );
 add_action( 'admin_enqueue_scripts', 'cocojambo_scripts_admin' );
+add_action( 'admin_init', 'cocojambo_add_settings' );
 
+function cocojambo_add_settings() {
+	register_setting( 'cocojambo_main_group', 'cocojambo_main_email' );
 
+	add_settings_section( 'cocojambo_main_first',
+		__( 'Main Section One', 'cocojambo' ),
+		function () {
+			echo '<p>' . __( 'Main Section Description', 'cocojambo' ) . ' </p>';},
+		'add-prefix-to-post-title' );
+
+	add_settings_field(
+		'cocojambo_main_email',
+		__('Email', 'cocojambo'),
+		'main_email_field',
+		'add-prefix-to-post-title',
+		'cocojambo_main_first',
+		['label_for' => 'cocojambo_main_email']
+	);
+}
+
+function main_email_field() {
+	echo "Email Field";
+}
 
 function loaded_textdomain() {
-	var_dump(dirname(plugin_basename(__FILE__)) . '/languages/');
-	load_plugin_textdomain('cocojambo');
+	load_plugin_textdomain( 'cocojambo' );
 }
 
 function cocojambo_admin_pages() {
@@ -60,8 +81,10 @@ function cocojambo_scripts_front() {
 }
 
 function cocojambo_scripts_admin( $hook_suffix ) {
-	var_dump($hook_suffix);
-	if ( ! in_array( $hook_suffix, [ 'toplevel_page_add-prefix-to-post-title', 'toplevel_page_add-prefix-to-post' ] ) ) {
+	if ( ! in_array( $hook_suffix, [
+		'toplevel_page_add-prefix-to-post-title',
+		'toplevel_page_add-prefix-to-post'
+	] ) ) {
 		return;
 	}
 	wp_enqueue_style( 'cocojambo-admin', plugins_url( '/assets/admin/admin.css', __FILE__ ) );
