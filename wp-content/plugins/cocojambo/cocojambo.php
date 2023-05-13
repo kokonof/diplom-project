@@ -30,6 +30,9 @@ function activationPlugin() {
 					 `name` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)
     			) ENGINE = InnoDB;";
 	$wpdb->query( $query );
+
+	cocojambo_add_post_type();
+	flush_rewrite_rules();
 }
 
 function deactivationPlugin() {
@@ -43,6 +46,25 @@ add_action( 'admin_menu', 'cocojambo_admin_pages' );
 add_action( 'wp_enqueue_scripts', 'cocojambo_scripts_front' );
 add_action( 'admin_enqueue_scripts', 'cocojambo_scripts_admin' );
 add_action( 'admin_init', 'cocojambo_add_settings' );
+add_action( 'init', 'cocojambo_add_post_type' );
+
+function cocojambo_add_post_type() {
+	register_post_type('book', [
+		'label' => __('Books', 'cocojambo'),
+		'public' => true,
+		'supports' => [
+			'title',
+			'editor',
+			'thumbnail'
+		],
+		'has_archive' => true,
+		'rewrite' => [
+			'slug' => 'books'
+		],
+		'show_in_rest' => true
+	]);
+}
+
 
 function cocojambo_add_settings() {
 	register_setting( 'cocojambo_main_group', 'cocojambo_main_email' );

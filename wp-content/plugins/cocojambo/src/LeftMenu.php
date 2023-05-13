@@ -29,13 +29,16 @@ class CocojamboLeftMenu {
 	}
 
 	public function addPrefixToPost() {
-		echo '<div class="wrap"> <h2>' . __('Create New Recommendation','cocojambo') . ' </h2></div>';
+		$this->requireTemplate('new-post-recommendation');
 	}
 
 	public function addSettings() {
-		return require_once plugin_dir_path( __FILE__ ) .'../templates/admin-settings-page.php';
+		$this->requireTemplate('admin-settings-page');
 	}
 
+	protected function requireTemplate($fileName) {
+		return require_once plugin_dir_path( __FILE__ ) .'../templates/'. $fileName.'.php';
+	}
 }
 
 
