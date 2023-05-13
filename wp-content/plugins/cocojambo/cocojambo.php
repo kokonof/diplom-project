@@ -49,6 +49,27 @@ add_action( 'admin_init', 'cocojambo_add_settings' );
 add_action( 'init', 'cocojambo_add_post_type' );
 
 function cocojambo_add_post_type() {
+
+	register_taxonomy('book', ['book'], [
+		'hierarchical' => true,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'show_in_rest' => true,
+		'rewrite' =>[
+			'slug' => 'books/genre',
+		],
+		'labels' => [
+			'name'                        => __( 'Genres', 'cocojambo' ),
+			'singular_name'               => __( 'Genre', 'cocojambo' ),
+			'all_items'                   => __( 'All Genres' , 'cocojambo'),
+			'edit_item'                   => __( 'Edit Genres', 'cocojambo' ),
+			'update_item'                 => __( 'Update Genres', 'cocojambo' ),
+			'add_new_item'                => __( 'Add New Genres' , 'cocojambo'),
+			'new_item_name'               => __( 'New Genres Name' , 'cocojambo'),
+			'add_or_remove_items'         => __( 'Add or remove Genres', 'cocojambo' ),
+			'menu_name'                   => __( 'Genres' , 'cocojambo'),
+		]
+	]);
 	register_post_type('book', [
 		'label' => __('Books', 'cocojambo'),
 		'public' => true,
