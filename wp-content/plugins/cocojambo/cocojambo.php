@@ -48,9 +48,34 @@ add_action( 'admin_enqueue_scripts', 'cocojambo_scripts_admin' );
 add_action( 'admin_init', 'cocojambo_add_settings' );
 add_action( 'init', 'cocojambo_add_post_type' );
 
+add_filter('template_include', 'cocojambo_get_theme_template');
+
+function cocojambo_get_theme_template( $template ) {
+	var_dump(get_template_directory());
+	if (is_singular('book')) {
+		if (!file_exists(get_template_directory() . '/single-book.php')){
+			return COCOJAMBO_PLUGIN_DIR . 'templates/public/single-book.php';
+		}
+	}
+
+	if (is_post_type_archive('book')) {
+		if (!file_exists(get_template_directory() . '/archive-book.php')){
+			return COCOJAMBO_PLUGIN_DIR . 'templates/public/archive-book.php';
+		}
+	}
+
+	if (is_tax('genre')) {
+		if (!file_exists(get_template_directory() . '/taxonomy-genre.php')){
+			return COCOJAMBO_PLUGIN_DIR . 'templates/public/taxonomy-genre.php';
+		}
+	}
+
+	return $template;
+}
+
 function cocojambo_add_post_type() {
 
-	register_taxonomy('book', ['book'], [
+	register_taxonomy('genre', 'book', [
 		'hierarchical' => true,
 		'show_ui' => true,
 		'show_admin_column' => true,
