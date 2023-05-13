@@ -49,6 +49,16 @@ add_action( 'admin_init', 'cocojambo_add_settings' );
 add_action( 'init', 'cocojambo_add_post_type' );
 
 add_filter('template_include', 'cocojambo_get_theme_template');
+add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'cocojambo_add_plugin_links');
+
+function cocojambo_add_plugin_links( $links ) {
+var_dump($links);
+	$newLinks = [
+		'<a href="'. admin_url('admin.php?page=add_prefix_to_post') .'"> '. __('Settings','cocojambo') .'</a>',
+	];
+
+	return array_merge($links, $newLinks);
+}
 
 function cocojambo_get_theme_template( $template ) {
 	var_dump(get_template_directory());
