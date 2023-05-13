@@ -51,6 +51,18 @@ add_action( 'init', 'cocojambo_add_post_type' );
 add_filter('template_include', 'cocojambo_get_theme_template');
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'cocojambo_add_plugin_links');
 
+add_shortcode('cocojambo_code', 'cocojambo_code');
+
+function cocojambo_code($attr) {
+	$attr = shortcode_atts([
+		'tag' => 'h3',
+		'class' => 'btn btn-primary'
+	], $attr);
+	$tag = esc_html($attr['tag']);
+	$class = esc_html($attr['class']);
+	return " <{$tag} class='{$class}'> Shortcode!!!</{$tag}>";
+}
+
 function cocojambo_add_plugin_links( $links ) {
 var_dump($links);
 	$newLinks = [
