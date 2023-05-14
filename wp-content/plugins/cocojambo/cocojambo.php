@@ -30,6 +30,9 @@ function activationPlugin() {
 					 `name` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)
     			) ENGINE = InnoDB;";
 	$wpdb->query( $query );
+
+	cocojambo_add_post_type();
+	flush_rewrite_rules();
 }
 
 function deactivationPlugin() {
@@ -43,19 +46,22 @@ add_action( 'admin_menu', 'cocojambo_admin_pages' );
 add_action( 'wp_enqueue_scripts', 'cocojambo_scripts_front' );
 add_action( 'admin_enqueue_scripts', 'cocojambo_scripts_admin' );
 add_action( 'admin_init', 'cocojambo_add_settings' );
-add_action('init', 'gutenberg_examples_block');
-function gutenberg_examples_block() {
-	var_dump(__DIR__);
-	register_block_type(__DIR__ . '/block/first');
-}
 
 function cocojambo_add_settings() {
 	register_setting( 'cocojambo_main_group', 'cocojambo_main_email' );
+	register_setting( 'cocojambo_main_group', 'cocojambo_main_name' );
 
-	add_settings_section( 'cocojambo_main_first',
+	add_settings_section(
+		'cocojambo_main_first',
 		__( 'Main Section One', 'cocojambo' ),
 		function () {
 			echo '<p>' . __( 'Main Section Description', 'cocojambo' ) . ' </p>';},
+		'add-prefix-to-post-title' );
+
+	add_settings_section(
+		'cocojambo_main_second',
+		__( 'Main Section Second', 'cocojambo' ),
+		'',
 		'add-prefix-to-post-title' );
 
 	add_settings_field(
@@ -66,10 +72,33 @@ function cocojambo_add_settings() {
 		'cocojambo_main_first',
 		['label_for' => 'cocojambo_main_email']
 	);
+
+	add_settings_field(
+		'cocojambo_main_name',
+		__('Name', 'cocojambo'),
+		'main_name_field',
+		'add-prefix-to-post-title',
+		'cocojambo_main_second',
+		['label_for' => 'cocojambo_main_name']
+	);
 }
 
 function main_email_field() {
-	echo "Email Field";
+	echo '<input 
+	name="cocojambo_main_email" 
+	id="cocojambo_main_email" 
+	type="text" 
+	value="' . esc_attr(get_option('cocojambo_main_email')) . '"
+	class="regular-text code" />';
+}
+
+function main_name_field() {
+	echo '<input 
+	name="cocojambo_main_name" 
+	id="cocojambo_main_name" 
+	type="time" 
+	value="' . esc_attr(get_option('cocojambo_main_name')) . '"
+	class="regular-text code" />';
 }
 
 function loaded_textdomain() {

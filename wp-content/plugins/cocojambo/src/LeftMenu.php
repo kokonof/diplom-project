@@ -29,20 +29,16 @@ class CocojamboLeftMenu {
 	}
 
 	public function addPrefixToPost() {
-		echo '<div class="wrap"> <h2>' . __('Create New Recommendation','cocojambo') . ' </h2></div>';
+		$this->requireTemplate('new-post-recommendation');
 	}
 
 	public function addSettings() {
-		echo '<div class="wrap">
- 				<h1>' . _e('General Settings','cocojambo') . ' </h1>' .
-		    settings_errors()
-			. '<form action="options.php" method="post"> '.
-			settings_fields('cocojambo_main_group').
-		     do_settings_sections('add-prefix-to-post-title').
-			 submit_button()
-			.'</form></div>';
+		$this->requireTemplate('admin-settings-page');
 	}
 
+	protected function requireTemplate($fileName) {
+		return require_once plugin_dir_path( __FILE__ ) .'../templates/'. $fileName.'.php';
+	}
 }
 
 
