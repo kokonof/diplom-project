@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @method have_posts()
+ * @method the_post()
+ * @property $found_posts
+ * @property $max_num_pages
+ */
 class Cocojambo_Admin {
 	public function __construct(  ) {
 		add_action( 'admin_enqueue_scripts', [$this, 'cocojambo_scripts_admin'] );
@@ -16,5 +22,14 @@ class Cocojambo_Admin {
 			COCOJAMBO_PLUGIN_URL . '/assets/admin/admin.css'  );
 		wp_enqueue_script( 'cocojambo-admin',
 			COCOJAMBO_PLUGIN_URL . '/assets/admin/admin.js', ['jquery']  );
+	}
+
+	public function get_posts(): WP_Query {
+		return new WP_Query([
+			'post_type' => 'post',
+			'order_by' => 'ID',
+			'order' => 'DESC',
+			'paged' => $_GET['paged'] ?? 1
+ 		]);
 	}
 }

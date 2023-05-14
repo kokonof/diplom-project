@@ -2,7 +2,7 @@
 /*
 Plugin Name: cocojambo
 Description: Description
-Version: 0.0.1
+Version: 0.2.5
 Author: Volkov Grisha
 Requires PHP: 7.4
 Text Domain: cocojambo
@@ -31,6 +31,10 @@ require_once 'src/class-left-menu.php';
 function run() {
 	$plugin = new Cocojambo_Panel();
 	$cocojambo_menu = new Cocojambo_Left_Menu();
+
+	$cocojambo_study = new CocojamboStudy();
+	$cocojambo_study->convertTitle();
+	$cocojambo_study->addPrefixToPostTitle();
 }
 run();
 
@@ -124,7 +128,6 @@ function cocojambo_code( $attr ) {
 
 
 function cocojambo_get_theme_template( $template ) {
-	var_dump( get_template_directory() );
 	if ( is_singular( 'book' ) ) {
 		if ( ! file_exists( get_template_directory() . '/single-book.php' ) ) {
 			return COCOJAMBO_PLUGIN_DIR . 'templates/public/single-book.php';
@@ -239,10 +242,4 @@ function main_name_field() {
 	class="regular-text code" />';
 }
 
-
-
-
-$cocojambo_study = new CocojamboStudy();
-$cocojambo_study->convertTitle();
-$cocojambo_study->addPrefixToPostTitle();
 

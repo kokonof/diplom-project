@@ -2,7 +2,6 @@
 
 class Cocojambo_Panel {
 	public function __construct(  ) {
-		echo __METHOD__;
 		$this->load_dependencies();
 		$this->initHooks();
 		$this->define_admin_hooks();

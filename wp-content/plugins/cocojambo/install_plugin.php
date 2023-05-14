@@ -8,7 +8,6 @@ function activation_plugin() {
 }
 
 function deactivation_plugin() {
-	var_dump('asad');
 	Cocojambo_Activate::deactivate();
 }
 function cocojambo_add_plugin_links( $links ) {

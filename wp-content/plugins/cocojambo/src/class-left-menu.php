@@ -39,16 +39,27 @@ class Cocojambo_Left_Menu {
 	}
 
 	public function addNewSlide() {
-		$this->requireTemplate('add-new-slide');
+		$cocojambo_admin = new Cocojambo_Admin();
+		$posts = $cocojambo_admin->get_posts();
+		$page = $_GET['paged'] ?? 1;
+
+		$this->requireTemplate('add-new-slide', [
+			'posts' => $posts,
+			'page' => $page
+		]);
 	}
 
 	public function addSettings() {
 		$this->requireTemplate('slide-settings');
 	}
 
-	protected function requireTemplate($fileName) {
-		return require_once plugin_dir_path( __FILE__ ) .'../templates/'. $fileName.'.php';
+	protected function requireTemplate($fileName, $data = []) {
+		ob_start();
+		extract($data);
+		require plugin_dir_path( __FILE__ ) .'../templates/'. $fileName.'.php';
+		echo ob_get_clean();
 	}
+
 }
 
 
