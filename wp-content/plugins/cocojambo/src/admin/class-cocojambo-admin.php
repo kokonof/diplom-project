@@ -7,7 +7,7 @@ class Cocojambo_Admin {
 
 	public function cocojambo_scripts_admin( $hook_suffix ) {
 		if ( ! in_array( $hook_suffix, [
-			'toplevel_page_add-prefix-to-post-title',
+			'toplevel_page_add-new-slide',
 			'toplevel_page_add-prefix-to-post'
 		] ) ) {
 			return;

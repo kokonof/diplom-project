@@ -23,7 +23,7 @@ class Cocojambo_Activate {
 
 	public static function addLinksTopluginPanel( $links ) {
 		$newLinks = [
-			'<a href="' . admin_url( 'admin.php?page=add_prefix_to_post' ) . '"> ' . __( 'Settings', 'cocojambo' ) . '</a>',
+			'<a href="' . admin_url( 'admin.php?page=slide-settings' ) . '"> ' . __( 'Settings', 'cocojambo' ) . '</a>',
 		];
 
 		return array_merge( $links, $newLinks );

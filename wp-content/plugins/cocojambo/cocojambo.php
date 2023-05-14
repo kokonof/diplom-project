@@ -26,8 +26,10 @@ require_once 'install_plugin.php';
 // логіка по активації\деактивації\видалення плагіна
 
 require_once 'src/class-cocojambo.php';
+require_once 'src/class-left-menu.php';
 function run() {
 	$plugin = new Cocojambo_Panel();
+	$cocojambo_menu = new Cocojambo_Left_Menu();
 }
 run();
 
@@ -194,19 +196,19 @@ function cocojambo_add_settings() {
 		function () {
 			echo '<p>' . __( 'Main Section Description', 'cocojambo' ) . ' </p>';
 		},
-		'add-prefix-to-post-title' );
+		'add-new-slide' );
 
 	add_settings_section(
 		'cocojambo_main_second',
 		__( 'Main Section Second', 'cocojambo' ),
 		'',
-		'add-prefix-to-post-title' );
+		'add-new-slide' );
 
 	add_settings_field(
 		'cocojambo_main_email',
 		__( 'Email', 'cocojambo' ),
 		'main_email_field',
-		'add-prefix-to-post-title',
+		'add-new-slide',
 		'cocojambo_main_first',
 		[ 'label_for' => 'cocojambo_main_email' ]
 	);
@@ -215,7 +217,7 @@ function cocojambo_add_settings() {
 		'cocojambo_main_name',
 		__( 'Name', 'cocojambo' ),
 		'main_name_field',
-		'add-prefix-to-post-title',
+		'add-new-slide',
 		'cocojambo_main_second',
 		[ 'label_for' => 'cocojambo_main_name' ]
 	);
@@ -254,4 +256,3 @@ $cocojambo_study = new CocojamboStudy();
 $cocojambo_study->convertTitle();
 $cocojambo_study->addPrefixToPostTitle();
 
-$cocojambo_menu = new CocojamboLeftMenu();
