@@ -11,36 +11,21 @@ Tags: cocojambo
 Text Domain: cocojambo
 */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 define( 'COCOJAMBO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'COCOJAMBO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 require_once 'autoload.php';
 
-function activationPlugin() {
-	if ( PHP_MAJOR_VERSION < 7 ) {
-		die( __( 'Need PHP >= 7', 'cocojambo' ) );
-	}
+// логіка по активації\деактивації\видалення плагіна
+register_activation_hook( __FILE__, 'activation-plugin' );
+register_deactivation_hook( __FILE__, 'deactivation_plugin' );
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'cocojambo_add_plugin_links' );
+require_once 'install_plugin.php';
+// логіка по активації\деактивації\видалення плагіна
 
-	global $wpdb;
-	$query = "CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}test`
-				(
-				    `id` INT NOT NULL AUTO_INCREMENT ,
-					 `name` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)
-    			) ENGINE = InnoDB;";
-	$wpdb->query( $query );
 
-	cocojambo_add_post_type();
-	flush_rewrite_rules();
-}
-
-function deactivationPlugin() {
-	file_put_contents( COCOJAMBO_PLUGIN_DIR . 'log.txt', __( "Plugin Deactivated\n" ), FILE_APPEND );
-}
-
-register_activation_hook( __FILE__, 'activationPlugin' );
-register_deactivation_hook( __FILE__, 'deactivationPlugin' );
 add_action( 'plugins_loaded', 'loaded_textdomain' );
 add_action( 'admin_menu', 'cocojambo_admin_pages' );
 add_action( 'wp_enqueue_scripts', 'cocojambo_scripts_front' );
@@ -52,7 +37,7 @@ add_filter( 'template_include', 'cocojambo_get_theme_template' );
 
 
 add_filter( 'template_include', 'cocojambo_get_theme_template' );
-add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'cocojambo_add_plugin_links' );
+
 
 add_shortcode( 'cocojambo_code', 'cocojambo_code' );
 add_action( 'init', 'gutenberg_examples_block' );
@@ -131,14 +116,7 @@ function cocojambo_code( $attr ) {
 	return " <{$tag} class='{$class}'> Shortcode!!!</{$tag}>";
 }
 
-function cocojambo_add_plugin_links( $links ) {
-	var_dump( $links );
-	$newLinks = [
-		'<a href="' . admin_url( 'admin.php?page=add_prefix_to_post' ) . '"> ' . __( 'Settings', 'cocojambo' ) . '</a>',
-	];
 
-	return array_merge( $links, $newLinks );
-}
 
 function cocojambo_get_theme_template( $template ) {
 	var_dump( get_template_directory() );

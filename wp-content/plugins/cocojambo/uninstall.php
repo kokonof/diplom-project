@@ -4,7 +4,9 @@ if (! defined('WP_UNINSTALL_PLUGIN')) {
 }
 
 global $wpdb;
-$wpdb->query("DROP TABLE IF EXISTS `{$wpdb->prefix}test`");
+$wpdb->query("DROP TABLE IF EXISTS `{$wpdb->prefix}cocojambo_panel`");
+
+delete_metadata('post', '', 'cocojambo_panel', '', true);
 
 $wpdb->query( "DELETE p, pm
   FROM `{$wpdb->prefix}posts` p
