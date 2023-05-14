@@ -46,7 +46,101 @@ add_action( 'admin_menu', 'cocojambo_admin_pages' );
 add_action( 'wp_enqueue_scripts', 'cocojambo_scripts_front' );
 add_action( 'admin_enqueue_scripts', 'cocojambo_scripts_admin' );
 add_action( 'admin_init', 'cocojambo_add_settings' );
+add_action( 'init', 'cocojambo_add_post_type' );
 
+add_filter('template_include', 'cocojambo_get_theme_template');
+
+add_action( 'init', 'cocojambo_add_post_type' );
+
+add_filter('template_include', 'cocojambo_get_theme_template');
+add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'cocojambo_add_plugin_links');
+
+add_shortcode('cocojambo_code', 'cocojambo_code');
+add_action('init', 'gutenberg_examples_block');
+function gutenberg_examples_block() {
+	var_dump(__DIR__);
+	register_block_type(__DIR__ . '/block/first');
+}
+
+function cocojambo_code($attr) {
+	$attr = shortcode_atts([
+		'tag' => 'h3',
+		'class' => 'btn btn-primary'
+	], $attr);
+	$tag = esc_html($attr['tag']);
+	$class = esc_html($attr['class']);
+	return " <{$tag} class='{$class}'> Shortcode!!!</{$tag}>";
+}
+
+function cocojambo_add_plugin_links( $links ) {
+	var_dump($links);
+	$newLinks = [
+		'<a href="'. admin_url('admin.php?page=add_prefix_to_post') .'"> '. __('Settings','cocojambo') .'</a>',
+	];
+
+	return array_merge($links, $newLinks);
+}
+
+function cocojambo_get_theme_template( $template ) {
+	var_dump(get_template_directory());
+	if (is_singular('book')) {
+		if (!file_exists(get_template_directory() . '/single-book.php')){
+			return COCOJAMBO_PLUGIN_DIR . 'templates/public/single-book.php';
+		}
+	}
+
+	if (is_post_type_archive('book')) {
+		if (!file_exists(get_template_directory() . '/archive-book.php')){
+			return COCOJAMBO_PLUGIN_DIR . 'templates/public/archive-book.php';
+		}
+	}
+
+	if (is_tax('genre')) {
+		if (!file_exists(get_template_directory() . '/taxonomy-genre.php')){
+			return COCOJAMBO_PLUGIN_DIR . 'templates/public/taxonomy-genre.php';
+		}
+	}
+
+	return $template;
+}
+
+function cocojambo_add_post_type() {
+
+	register_taxonomy('genre', 'book', [
+		'hierarchical' => true,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'show_in_rest' => true,
+		'rewrite' =>[
+			'slug' => 'books/genre',
+		],
+		'labels' => [
+			'name'                        => __( 'Genres', 'cocojambo' ),
+			'singular_name'               => __( 'Genre', 'cocojambo' ),
+			'all_items'                   => __( 'All Genres' , 'cocojambo'),
+			'edit_item'                   => __( 'Edit Genres', 'cocojambo' ),
+			'update_item'                 => __( 'Update Genres', 'cocojambo' ),
+			'add_new_item'                => __( 'Add New Genres' , 'cocojambo'),
+			'new_item_name'               => __( 'New Genres Name' , 'cocojambo'),
+			'add_or_remove_items'         => __( 'Add or remove Genres', 'cocojambo' ),
+			'menu_name'                   => __( 'Genres' , 'cocojambo'),
+		]
+	]);
+	register_post_type('book', [
+		'label' => __('Books', 'cocojambo'),
+		'public' => true,
+		'supports' => [
+			'title',
+			'editor',
+			'thumbnail'
+		],
+		'has_archive' => true,
+		'rewrite' => [
+			'slug' => 'books'
+		],
+		'show_in_rest' => true
+	]);
+}
 function cocojambo_add_settings() {
 	register_setting( 'cocojambo_main_group', 'cocojambo_main_email' );
 	register_setting( 'cocojambo_main_group', 'cocojambo_main_name' );
