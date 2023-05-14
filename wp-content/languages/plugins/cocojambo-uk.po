@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blank WordPress Pot v1.0.0\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2023-05-11 23:50+0300\n"
+"POT-Creation-Date: 2023-05-14 20:59+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Your Team <translations@example.com>\n"
@@ -13,8 +13,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
-"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;"
+"_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;"
+"__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ../../plugins/cocojambo\n"
 "X-Generator: Poedit 3.3\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -22,22 +25,114 @@ msgstr ""
 msgid "File not found: "
 msgstr "Файл не знайдено"
 
-#: cocojambo.php:23
+#: cocojambo.php:78
+msgid "Book info"
+msgstr ""
+
+#: cocojambo.php:92
+msgid "Number of pages"
+msgstr ""
+
+#: cocojambo.php:99
+msgid "Cover?"
+msgstr ""
+
+#: cocojambo.php:162 cocojambo.php:170
+msgid "Genres"
+msgstr ""
+
+#: cocojambo.php:163
+msgid "Genre"
+msgstr ""
+
+#: cocojambo.php:164
+msgid "All Genres"
+msgstr ""
+
+#: cocojambo.php:165
+msgid "Edit Genres"
+msgstr ""
+
+#: cocojambo.php:166
+msgid "Update Genres"
+msgstr ""
+
+#: cocojambo.php:167
+msgid "Add New Genres"
+msgstr ""
+
+#: cocojambo.php:168
+msgid "New Genres Name"
+msgstr ""
+
+#: cocojambo.php:169
+msgid "Add or remove Genres"
+msgstr ""
+
+#: cocojambo.php:174
+msgid "Books"
+msgstr ""
+
+#: cocojambo.php:195
+msgid "Main Section One"
+msgstr ""
+
+#: cocojambo.php:197
+msgid "Main Section Description"
+msgstr ""
+
+#: cocojambo.php:203
+msgid "Main Section Second"
+msgstr ""
+
+#: cocojambo.php:209
+msgid "Email"
+msgstr ""
+
+#: cocojambo.php:218
+msgid "Name"
+msgstr "Імя"
+
+#: src/class-cocojambo-activate.php:7
 msgid "Need PHP >= 7"
 msgstr "Потрібно PHP >= 7"
 
-#: cocojambo.php:36
+#: src/class-cocojambo-activate.php:21
 msgid "Plugin Deactivated\n"
 msgstr "Плагін деактивовано\n"
 
-#: cocojambo.php:67
-msgid "test translate"
+#: src/class-cocojambo-activate.php:26
+msgid "Settings"
+msgstr "Налаштування"
+
+#: src/class-left-menu.php:15 src/class-left-menu.php:16
+msgid "Create Slide"
+msgstr "Додати слайд"
+
+#: src/class-left-menu.php:24 src/class-left-menu.php:25
+#: templates/add-new-slide.php:3
+msgid "Set Slide"
+msgstr "Новий слайд"
+
+#: src/class-left-menu.php:33 src/class-left-menu.php:34
+#: templates/slide-settings.php:2
+msgid "Slide Settings"
+msgstr "Налаштування слайдів"
+
+#: templates/public/archive-book.php:35 templates/public/archive.php:35
+#: templates/public/taxonomy-genre.php:35
+msgid "Continue reading..."
 msgstr ""
 
-#: src/LeftMenu.php:15 src/LeftMenu.php:16 src/LeftMenu.php:32
-msgid "Create New Recommendation"
-msgstr "Створити нову рекомендацію"
+#: templates/public/archive-book.php:49 templates/public/archive.php:49
+#: templates/public/taxonomy-genre.php:49
+msgid "« Попередня"
+msgstr ""
 
-#: src/LeftMenu.php:23 src/LeftMenu.php:24
-msgid "Settings"
-msgstr "Налаштування рекомендацій"
+#: templates/public/archive-book.php:50 templates/public/archive.php:50
+#: templates/public/taxonomy-genre.php:50
+msgid "Наступна »"
+msgstr ""
+
+#~ msgid "Create New Recommendation"
+#~ msgstr "Створити нову рекомендацію"

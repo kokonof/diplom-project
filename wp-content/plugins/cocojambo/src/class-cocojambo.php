@@ -4,6 +4,7 @@ class Cocojambo_Panel {
 	public function __construct(  ) {
 		echo __METHOD__;
 		$this->load_dependencies();
+		$this->initHooks();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 	}
@@ -18,5 +19,13 @@ class Cocojambo_Panel {
 	}
 	private function define_public_hooks() {
 		$plugin_public = new Cocojambo_Public();
+	}
+
+	private function initHooks() {
+		add_action( 'plugins_loaded', [$this, 'loaded_textdomain'] );
+	}
+
+	function loaded_textdomain() {
+		load_plugin_textdomain( 'cocojambo' );
 	}
 }

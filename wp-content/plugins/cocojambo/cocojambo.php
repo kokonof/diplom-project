@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 define( 'COCOJAMBO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'COCOJAMBO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'COCOJAMBO_PLUGIN_NAME', dirname(plugin_dir_url( __FILE__ )));
 
 require_once 'autoload.php';
 
@@ -33,9 +34,6 @@ function run() {
 }
 run();
 
-
-add_action( 'plugins_loaded', 'loaded_textdomain' );
-add_action( 'admin_menu', 'cocojambo_admin_pages' );
 
 add_action( 'admin_init', 'cocojambo_add_settings' );
 add_action( 'init', 'cocojambo_add_post_type' );
@@ -239,14 +237,6 @@ function main_name_field() {
 	type="time" 
 	value="' . esc_attr( get_option( 'cocojambo_main_name' ) ) . '"
 	class="regular-text code" />';
-}
-
-function loaded_textdomain() {
-	load_plugin_textdomain( 'cocojambo' );
-}
-
-function cocojambo_admin_pages() {
-
 }
 
 
