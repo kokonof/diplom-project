@@ -43,6 +43,11 @@ add_action( 'admin_menu', 'cocojambo_admin_pages' );
 add_action( 'wp_enqueue_scripts', 'cocojambo_scripts_front' );
 add_action( 'admin_enqueue_scripts', 'cocojambo_scripts_admin' );
 add_action( 'admin_init', 'cocojambo_add_settings' );
+add_action('init', 'gutenberg_examples_block');
+function gutenberg_examples_block() {
+	var_dump(__DIR__);
+	register_block_type(__DIR__ . '/block/first');
+}
 
 function cocojambo_add_settings() {
 	register_setting( 'cocojambo_main_group', 'cocojambo_main_email' );
