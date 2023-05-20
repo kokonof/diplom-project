@@ -37,7 +37,10 @@
 		<tbody>
 
 		<?php
-		if ( $posts->have_posts() ) : while ( $posts->have_posts() ) : $posts->the_post(); ?>
+		if ( $posts->have_posts() ) : while ( $posts->have_posts() ) : $posts->the_post();
+        $slide_id = get_post_meta(get_the_ID(), 'cocojambo_panel', true)
+        ?>
+
 			<tr>
 				<td class="title column-title has-row-actions column-primary page-title"
 				    data-colname="<?php _e( 'Title', 'cocojambo' ); ?>">
@@ -47,10 +50,12 @@
 					</button>
 				</td>
 				<td class="column-slides" data-colname="<?php _e( 'Slides', 'cocojambo' ); ?>">
-					<select name="" id="">
-						<option value="">Lorem ipsum dolor sit amet.</option>
-						<option value="">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</option>
-						<option value="">Lorem ipsum dolor sit amet.</option>
+					<select class="cocojambo-select" data-article="<?php the_ID();?>">
+						<option value="0" <?php selected($slide_id, '')?>><?php _e('Select Slide', 'cocojambo')?></option>
+                        <?php  /** @var Cocojambo_Admin $slides */
+                        foreach ($slides as $id => $slide):?>
+						    <option value="<?php echo $id; ?>" <?php selected($slide_id, $id)?>><?php echo $slide; ?></option>
+                        <?php endforeach;?>
 					</select>
 				</td>
 			</tr>
@@ -76,5 +81,6 @@
 		) );
 		?>
 	</div>
+        <div id="overlay"></div>
 	<!-- Pagination -->
 </div>

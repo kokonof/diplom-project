@@ -41,10 +41,12 @@ class Cocojambo_Left_Menu {
 	public function addNewSlide() {
 		$cocojambo_admin = new Cocojambo_Admin();
 		$posts = $cocojambo_admin->get_posts();
+		$slides = $cocojambo_admin->get_slides();
 		$page = $_GET['paged'] ?? 1;
 
 		$this->requireTemplate('add-new-slide', [
 			'posts' => $posts,
+			'slides' => $slides,
 			'page' => $page
 		]);
 	}
