@@ -50,7 +50,12 @@ class Cocojambo_Left_Menu {
 	}
 
 	public function addSettings() {
-		$this->requireTemplate('slide-settings');
+		$cocojambo_admin = new Cocojambo_Admin();
+		$slides = $cocojambo_admin->get_slides(true);
+
+		$this->requireTemplate('slide-settings', [
+			'slides' => $slides,
+		]);
 	}
 
 	protected function requireTemplate($fileName, $data = []) {

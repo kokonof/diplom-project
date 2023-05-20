@@ -1,3 +1,8 @@
-jQuery(document).ready(function($) {
-    // console.log('Hello Admin')
-})
+jQuery(document).ready(function ($) {
+
+    $( "#accordion" ).accordion({
+        collapsible: true,
+        active: false
+    });
+
+});
