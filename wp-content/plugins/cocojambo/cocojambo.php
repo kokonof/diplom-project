@@ -17,10 +17,10 @@ define( 'COCOJAMBO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'COCOJAMBO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'COCOJAMBO_PLUGIN_NAME', dirname(plugin_dir_url( __FILE__ )));
 
-require_once 'autoload.php';
+//require_once 'autoload.php';
 
 // логіка по активації\деактивації\видалення плагіна
-register_activation_hook( __FILE__, 'activation-plugin' );
+register_activation_hook( __FILE__, 'activation_plugin' );
 register_deactivation_hook( __FILE__, 'deactivation_plugin' );
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'cocojambo_add_plugin_links' );
 require_once 'install_plugin.php';
@@ -28,13 +28,14 @@ require_once 'install_plugin.php';
 
 require_once 'src/class-cocojambo.php';
 require_once 'src/class-left-menu.php';
+//require_once 'src/Study.php';
 function run() {
 	$plugin = new Cocojambo_Panel();
 	$cocojambo_menu = new Cocojambo_Left_Menu();
 
-	$cocojambo_study = new CocojamboStudy();
-	$cocojambo_study->convertTitle();
-	$cocojambo_study->addPrefixToPostTitle();
+//	$cocojambo_study = new CocojamboStudy();
+//	$cocojambo_study->convertTitle();
+//	$cocojambo_study->addPrefixToPostTitle();
 }
 run();
 
