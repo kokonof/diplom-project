@@ -1,15 +1,6 @@
 <?php
-/**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package impact
- */
-
 get_header();
 ?>
-
     <main id="main">
         <div class="breadcrumbs">
             <div class="page-header d-flex align-items-center" style="background-image: url('');">
@@ -31,14 +22,13 @@ get_header();
                 </div>
             </nav>
         </div>
-
         <section id="blog" class="blog">
             <div class="container" data-aos="fade-up">
                 <div class="row gy-4 posts-list">
 					<?php if ( have_posts() ) : ?>
                         <header class="page-header">
                             <h1 class="page-title">
-<!--								--><?php
+                                <?php
 //								printf( esc_html__( 'Search Results for: %s', 'impact' ), '<span>' . get_search_query() . '</span>' );
 //								?>
                             </h1>
@@ -65,7 +55,6 @@ get_header();
             </div>
         </section>
     </main>
-
 <?php
 get_sidebar();
 get_footer();

@@ -1,17 +1,7 @@
 <?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package impact
- */
-
 get_header();
 ?>
-
 	<main id="primary">
-
         <div class="breadcrumbs">
             <div class="page-header d-flex align-items-center" style="background-image: url('');">
                 <div class="container position-relative">
@@ -46,7 +36,6 @@ get_header();
                                 <h3 class="sidebar-title">Search</h3>
                                 <?php get_search_form();?>
                            </div>
-
                            <div class="sidebar-item categories">
                                <h3 class="sidebar-title"><?php esc_html_e( 'Categories', 'impact' ); ?></h3>
                                <ul class="mt-3">
@@ -62,8 +51,7 @@ get_header();
                                    );
                                    ?>
                                </ul>
-                           </div><!-- .widget -->
-
+                           </div>
                            <div class="sidebar-item search-form">
                                <h3 class=" post-item sidebar-title">Archives</h3>
                                <select class="form-select" name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
@@ -71,26 +59,17 @@ get_header();
                                    <?php wp_get_archives( 'type=monthly&format=option&show_post_count=1' ); ?>
                                </select>
                            </div>
-
                            <?php
-                       $tags = get_tags();
-                       $html = '  <div class="sidebar-item tags">
-                           <h3 class="sidebar-title">Tags</h3>
-                           <ul class="mt-3">';
-
-                       foreach ( $tags as $tag ) {
-                           $tag_link = get_tag_link( $tag->term_id );
-
-                           $html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
-                           $html .= "{$tag->name}</a></li>";
-                       }
-
-                       $html .= '</ul>
-                       </div>';
-
-                       echo $html;
-                       ?>
-
+                               $tags = get_tags();
+                               $html = '  <div class="sidebar-item tags"><h3 class="sidebar-title">Tags</h3><ul class="mt-3">';
+                               foreach ( $tags as $tag ) {
+                                   $tag_link = get_tag_link( $tag->term_id );
+                                   $html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+                                   $html .= "{$tag->name}</a></li>";
+                               }
+                               $html .= '</ul></div>';
+                               echo $html;
+                           ?>
                            <div class="sidebar-item recent-posts">
                                <h3 class="sidebar-title">Recent Posts</h3>
                                <div class="mt-3">

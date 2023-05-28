@@ -1,15 +1,6 @@
 <?php
-/**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package impact
- */
-
 get_header();
 ?>
-
     <main id="main">
         <div class="breadcrumbs">
             <div class="page-header d-flex align-items-center" style="background-image: url('');">
