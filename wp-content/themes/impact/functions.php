@@ -156,10 +156,12 @@ function impact_setup() {
 
 	add_image_size( 'spec_thumb', 850, '', true );
 	add_image_size( 'recent_thumb', '', 60, false );
+	add_image_size( 'blogs_thumb', '', 300, false );
 
 // далее в цикле выводим этот размер так:
 	the_post_thumbnail( 'spec_thumb' );
 	the_post_thumbnail( 'recent_thumb' );
+	the_post_thumbnail( 'blogs_thumb' );
 }
 add_action( 'after_setup_theme', 'impact_setup' );
 

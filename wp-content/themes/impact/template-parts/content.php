@@ -84,7 +84,7 @@
                     </article><!-- End blog post -->
 
                     <div class="post-author d-flex align-items-center">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/img/blog/blog-author.jpg" class="rounded-circle flex-shrink-0" alt="">
+                        <img src="<?php echo get_avatar_url( $GLOBALS['current_user'], array( 'size' => 120, 'default'=>'wavatar', ) ); ?>" class="rounded-circle flex-shrink-0" alt="">
                         <div>
                             <h4><?php esc_html( the_author() ) ?></h4>
                             <div class="social-links">
