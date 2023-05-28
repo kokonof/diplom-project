@@ -2372,8 +2372,8 @@ section {
     font-size: 14px;
 }
 
-.blog .sidebar .recent-posts .post-item+.post-item {
-    margin-top: 15px;
+.blog .sidebar .recent-posts .post-item {
+    margin-top: 22px;
 }
 
 .blog .sidebar .recent-posts img {

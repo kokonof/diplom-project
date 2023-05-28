@@ -33,7 +33,8 @@
                     <article class="blog-details">
 
                         <div class="post-img">
-	                        <?php the_post_thumbnail(); ?>
+	                        <?php the_post_thumbnail('spec_thumb'); ?>
+<!--	                        --><?php //echo get_the_post_thumbnail($recent["ID"], array( '', 60))?>
                         </div>
 
                         <h2 class="title"><?php echo the_title()?></h2>
@@ -131,96 +132,73 @@
                 </div>
 
                 <div class="col-lg-4">
-
                     <div class="sidebar">
-
                         <div class="sidebar-item search-form">
                             <h3 class="sidebar-title">Search</h3>
-                            <form action="" class="mt-3">
-                                <input type="text">
-                                <button type="submit"><i class="bi bi-search"></i></button>
-                            </form>
-                        </div><!-- End sidebar search formn-->
+			                <?php get_search_form();?>
+                        </div>
 
                         <div class="sidebar-item categories">
-                            <h3 class="sidebar-title">Categories</h3>
+                            <h3 class="sidebar-title"><?php esc_html_e( 'Categories', 'impact' ); ?></h3>
                             <ul class="mt-3">
-                                <li><a href="#">General <span>(25)</span></a></li>
-                                <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                                <li><a href="#">Travel <span>(5)</span></a></li>
-                                <li><a href="#">Design <span>(22)</span></a></li>
-                                <li><a href="#">Creative <span>(8)</span></a></li>
-                                <li><a href="#">Educaion <span>(14)</span></a></li>
+				                <?php
+				                wp_list_categories(
+					                array(
+						                'orderby'    => 'count',
+						                'order'      => 'DESC',
+						                'show_count' => 1,
+						                'title_li'   => '',
+						                'number'     => 10,
+					                )
+				                );
+				                ?>
                             </ul>
-                        </div><!-- End sidebar categories-->
+                        </div><!-- .widget -->
+
+                        <div class="sidebar-item search-form">
+                            <h3 class=" post-item sidebar-title">Archives</h3>
+                            <select class="form-select" name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+                                <option value=""><?php echo esc_attr( __( 'Select Month' ) ); ?></option>
+				                <?php wp_get_archives( 'type=monthly&format=option&show_post_count=1' ); ?>
+                            </select>
+                        </div>
+
+		                <?php
+		                $tags = get_tags();
+		                $html = '  <div class="sidebar-item tags">
+                           <h3 class="sidebar-title">Tags</h3>
+                           <ul class="mt-3">';
+
+		                foreach ( $tags as $tag ) {
+			                $tag_link = get_tag_link( $tag->term_id );
+
+			                $html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+			                $html .= "{$tag->name}</a></li>";
+		                }
+
+		                $html .= '</ul>
+                       </div>';
+
+		                echo $html;
+		                ?>
 
                         <div class="sidebar-item recent-posts">
                             <h3 class="sidebar-title">Recent Posts</h3>
-
                             <div class="mt-3">
-
-                                <div class="post-item mt-3">
-                                    <img src="<?php echo get_template_directory_uri();?>/assets/img/blog/blog-recent-1.jpg" alt="">
-                                    <div>
-                                        <h4><a href="blog-details.html">Nihil blanditiis at in nihil autem</a></h4>
-                                        <time datetime="2020-01-01">Jan 1, 2020</time>
+				                <?php $recent_posts = wp_get_recent_posts( array( 'numberposts' => '5' ) );
+				                foreach( $recent_posts as $recent ){ ?>
+                                    <div class="post-item post-item-bottom">
+						                <?php echo get_the_post_thumbnail($recent["ID"], 'recent_thumb')?>
+                                        <div>
+                                            <h4><a href="http://wordpress/<?php echo $recent["post_name"]?>"><?php echo $recent["post_title"]?></a></h4>
+                                            <time datetime="<?php echo $recent["post_date"]?>"><?php echo $recent["post_date"]?></time>
+                                        </div>
                                     </div>
-                                </div><!-- End recent post item-->
-
-                                <div class="post-item">
-                                    <img src="<?php echo get_template_directory_uri();?>/assets/img/blog/blog-recent-2.jpg" alt="">
-                                    <div>
-                                        <h4><a href="blog-details.html">Quidem autem et impedit</a></h4>
-                                        <time datetime="2020-01-01">Jan 1, 2020</time>
-                                    </div>
-                                </div><!-- End recent post item-->
-
-                                <div class="post-item">
-                                    <img src="<?php echo get_template_directory_uri();?>/assets/img/blog/blog-recent-3.jpg" alt="">
-                                    <div>
-                                        <h4><a href="blog-details.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                                        <time datetime="2020-01-01">Jan 1, 2020</time>
-                                    </div>
-                                </div><!-- End recent post item-->
-
-                                <div class="post-item">
-                                    <img src="<?php echo get_template_directory_uri();?>/assets/img/blog/blog-recent-4.jpg" alt="">
-                                    <div>
-                                        <h4><a href="blog-details.html">Laborum corporis quo dara net para</a></h4>
-                                        <time datetime="2020-01-01">Jan 1, 2020</time>
-                                    </div>
-                                </div><!-- End recent post item-->
-
-                                <div class="post-item">
-                                    <img src="<?php echo get_template_directory_uri();?>/assets/img/blog/blog-recent-5.jpg" alt="">
-                                    <div>
-                                        <h4><a href="blog-details.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                                        <time datetime="2020-01-01">Jan 1, 2020</time>
-                                    </div>
-                                </div><!-- End recent post item-->
-
+				                <?php } ?>
                             </div>
+                        </div>
 
-                        </div><!-- End sidebar recent posts-->
-
-                        <div class="sidebar-item tags">
-                            <h3 class="sidebar-title">Tags</h3>
-                            <ul class="mt-3">
-                                <li><a href="#">App</a></li>
-                                <li><a href="#">IT</a></li>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Mac</a></li>
-                                <li><a href="#">Design</a></li>
-                                <li><a href="#">Office</a></li>
-                                <li><a href="#">Creative</a></li>
-                                <li><a href="#">Studio</a></li>
-                                <li><a href="#">Smart</a></li>
-                                <li><a href="#">Tips</a></li>
-                                <li><a href="#">Marketing</a></li>
-                            </ul>
-                        </div><!-- End sidebar tags-->
-
-                    </div><!-- End Blog Sidebar -->
+                    </div>
 
                 </div>
             </div>

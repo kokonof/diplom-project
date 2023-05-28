@@ -153,6 +153,13 @@ function impact_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	add_image_size( 'spec_thumb', 850, '', true );
+	add_image_size( 'recent_thumb', '', 60, false );
+
+// далее в цикле выводим этот размер так:
+	the_post_thumbnail( 'spec_thumb' );
+	the_post_thumbnail( 'recent_thumb' );
 }
 add_action( 'after_setup_theme', 'impact_setup' );
 
@@ -259,5 +266,14 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+add_filter('wp_list_categories', 'cat_count_span');
+function cat_count_span($links) {
+	$links = str_replace('</a> (', ' <span>(', $links);
+	$links = str_replace(')', ')</span></a>', $links);
+	$links = str_replace('cat-item cat-item-1', '', $links);
+	return $links;
+}
+
+
 
 
