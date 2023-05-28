@@ -24,44 +24,31 @@ if ( post_password_required() ) {
 
 	<?php
 	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
-		<h4>
-			<?php
-			$impact_comment_count = get_comments_number();
-			if ( '1' === $impact_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'impact' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf(
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $impact_comment_count, 'comments title', 'impact' ) ),
-					number_format_i18n( $impact_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
-		</h4><!-- .comments-title -->
+	if ( have_comments() ) :?>
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<ol class="comment">
 			<?php
 			wp_list_comments(
 				array(
-					'style'      => 'ol',
-					'short_ping' => true,
+					'style'       => 'div',
+					'short_ping'  => true,
+                    'avatar_size' => 60,
+//                    'per_page' => 5,
+//                    'page' => 1,
+					'max_depth'   => 5,
+					'callback' => 'misha_comment',
+					'end-callback' => 'misha_end_comment'
 				)
 			);
+
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php
-		the_comments_navigation();
+	<?php the_comments_navigation(); ?>
 
+		<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
@@ -69,7 +56,7 @@ if ( post_password_required() ) {
 			<?php
 		endif;
 
-	endif; // Check for have_comments().
+	endif;
 
 	comment_form([
         'class_form' => 'reply-form',
@@ -89,26 +76,5 @@ if ( post_password_required() ) {
 		//Меняем разметку кнопки submit
         'submit_field' => '<div class="form-submit">%1$s %2$s</div>'
     ]);
-
-	$args = array(
-		// изменяем текст кнопки отправки
-		'label_submit'=>'Submit',
-		// удаляем сообщение со списком разрешенных HTML-тегов из-под формы комментирования
-		'comment_notes_after' => '',
-		'comment_notes_before' => '',
-		//текст перед формой комментариев
-		'title_reply' => __( 'Leave a comment' ),
-		//Меняем разметку полей author и email
-		'fields' => array (
-			'author' => '<div class="comment-author comment-block"><input id="author" name="author" type="text" value="" size="30" placeholder="Your name" /></div>',
-			'email' => '<div class="comment-email comment-block"><input id="email" name="email" type="email" value="" size="30" placeholder="Your email" /></div>'
-		),
-		//Меняем разметку поля комментария textarea
-		'comment_field' => '<div class="comment-form-comment"><textarea id="comment" name="comment" 
-        aria-required="true" placeholder="Your text"></textarea></div>',
-		//Меняем разметку кнопки submit
-		'submit_field' => '<div class="form-submit">%1$s %2$s</div>'
-	);
 	?>
 </div><!-- #comments -->
-
