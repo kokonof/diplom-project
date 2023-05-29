@@ -37,8 +37,8 @@
                     <div class="info-item d-flex">
                         <i class="bi bi-geo-alt flex-shrink-0"></i>
                         <div>
-                            <h4>Location:</h4>
-                            <p>A108 Adam Street, New York, NY 535022</p>
+                            <h4>Місцезнаходження:</h4>
+                            <p>Вул центральна, с.Лідихів, Тернопільська обл</p>
                         </div>
                     </div><!-- End Info Item -->
 
@@ -46,23 +46,23 @@
                         <i class="bi bi-envelope flex-shrink-0"></i>
                         <div>
                             <h4>Email:</h4>
-                            <p>info@example.com</p>
+                            <p>lidyhiv_zosh@ukr.net</p>
                         </div>
                     </div><!-- End Info Item -->
 
                     <div class="info-item d-flex">
                         <i class="bi bi-phone flex-shrink-0"></i>
                         <div>
-                            <h4>Call:</h4>
-                            <p>+1 5589 55488 55</p>
+                            <h4>Телефон:</h4>
+                            <p>+380 662 766 218</p>
                         </div>
                     </div><!-- End Info Item -->
 
                     <div class="info-item d-flex">
                         <i class="bi bi-clock flex-shrink-0"></i>
                         <div>
-                            <h4>Open Hours:</h4>
-                            <p>Mon-Sat: 11AM - 23PM</p>
+                            <h4>Години роботи:</h4>
+                            <p>Пон-Пят: 08:00Год-17:00Год</p>
                         </div>
                     </div><!-- End Info Item -->
                 </div>

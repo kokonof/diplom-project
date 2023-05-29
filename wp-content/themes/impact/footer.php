@@ -18,18 +18,18 @@
 			</div>
 
 			<div class="col-lg-2 col-6 footer-links">
-				<h4>Useful Links</h4>
+				<h4>Корисні посилання </h4>
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About us</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Terms of service</a></li>
-					<li><a href="#">Privacy policy</a></li>
+					<li><a href="#">Додому</a></li>
+					<li><a href="#">Про нас</a></li>
+					<li><a href="#">Послуги</a></li>
+					<li><a href="#">Умови використання</a></li>
+					<li><a href="#">Політика конфіденційності</a></li>
 				</ul>
 			</div>
 
 			<div class="col-lg-2 col-6 footer-links">
-				<h4>Our Services</h4>
+				<h4>Наші послуги</h4>
 				<ul>
 					<li><a href="#">Web Design</a></li>
 					<li><a href="#">Web Development</a></li>
