@@ -141,7 +141,7 @@
                                 <h4><a href="<?php echo get_option('home'); echo '/'. $recent["post_name"]?>"><?php echo $recent["post_title"]?></a></h4>
                             </h2>
                             <div class="d-flex align-items-center">
-                                <img src=" <?php echo get_avatar_url( $GLOBALS['current_user'], array( 'size' => 60, 'default'=>'wavatar', ) ); ?>" alt="" class="img-fluid">
+                                <img src=" <?php echo get_avatar_url( $GLOBALS['current_user'], array( 'size' => 60, 'default'=>'wavatar', ) ); ?>" alt="" class="img-fluid post-author-img flex-shrink-0">
                                 <div class="post-meta">
                                     <p class="post-author"><?php esc_html( the_author() ) ?></p>
                                     <p class="post-date">
