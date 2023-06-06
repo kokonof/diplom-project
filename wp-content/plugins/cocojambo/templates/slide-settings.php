@@ -90,6 +90,17 @@
 								) ); ?>
 							</td>
 						</tr>
+                        <tr>
+                            <th>
+                                <label for="slide_title_<?php echo $slide['id'] ?>">
+									<?php _e( 'Slide Url', 'cocojambo' ) ?></label>
+                            </th>
+                            <td>
+                                <input type="text" class="regular-text" name="slide_url"
+                                       id="slide_url_<?php echo $slide['id'] ?>"
+                                       value="<?php echo esc_attr( $slide['url'] ) ?>">
+                            </td>
+                        </tr>
 
 						</tbody>
 					</table>
