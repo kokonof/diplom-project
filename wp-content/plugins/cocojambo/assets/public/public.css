@@ -3,10 +3,10 @@
     border-top: 3px solid #fd5353;
     bottom: 0;
     box-shadow: 0 -2px 5px #aaa;
-    padding: 15px 5%;
+    padding: 15px 15px;
     position: fixed;
     right: -101%;
-    width: 50%;
+    width: 30%;
     z-index: 5;
     box-sizing: border-box;
     max-width: 100%;
