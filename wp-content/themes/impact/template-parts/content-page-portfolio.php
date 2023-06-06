@@ -34,8 +34,8 @@ if ( get_edit_post_link() ) : ?>
 
             <div>
                 <ul class="portfolio-flters">
-                    <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-app">App</li>
+                    <li data-filter="*" class="filter-active">Всі</li>
+                    <li data-filter=".filter-app">Шкільне життя</li>
                     <li data-filter=".filter-product">Product</li>
                     <li data-filter=".filter-branding">Branding</li>
                     <li data-filter=".filter-books">Books</li>
@@ -46,10 +46,13 @@ if ( get_edit_post_link() ) : ?>
 
                 <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-wrap">
-                        <a href="<?php echo get_template_directory_uri();?>/assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="<?php echo get_template_directory_uri();?>/assets/img/portfolio/app-1.jpg" class="img-fluid" alt=""></a>
+                        <a href="<?php echo get_option('home'); ?>/wp-content/uploads/2023/06/1570865800_img_20191010_120153.jpg"
+                           data-gallery="portfolio-gallery-app" class="glightbox">
+                            <img src="<?php echo get_option('home'); ?>/wp-content/uploads/2023/06/1570865800_img_20191010_120153.jpg"
+                                 class="img-fluid" alt=""></a>
                         <div class="portfolio-info">
-                            <h4><a href="http://wordpress/galery-one/" title="More Details">App 1</a></h4>
-                            <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            <h4><a href="<?php echo get_option('home'); ?>/galery-one/" title="More Details">Де козак, там і слава</a></h4>
+                            <p>Фестиваль козацької пісні "Де козак, там і слава"</p>
                         </div>
                     </div>
                 </div><!-- End Portfolio Item -->

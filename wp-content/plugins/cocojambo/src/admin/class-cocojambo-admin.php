@@ -97,24 +97,26 @@ class Cocojambo_Admin {
 		}
 
 		$slide_title   = isset( $_POST['slide_title'] ) ? trim( $_POST['slide_title'] ) : '';
+		$slide_url     = isset( $_POST['slide_url'] ) ? trim( $_POST['slide_url'] ) : '';
 		$slide_content = isset( $_POST['slide_content'] ) ? trim( $_POST['slide_content'] ) : '';
 		$slide_id      = isset( $_POST['slide_id'] ) ? (int) $_POST['slide_id'] : 0;
 
-		if ( empty( $slide_title ) || empty( $slide_content ) ) {
+		if ( empty( $slide_title ) || empty( $slide_content ) || empty( $slide_url ) ) {
 			set_transient( 'cocojambo_form_errors', __( 'Form fields are required', 'cocojambo' ), 30 );
 		} else {
 			$slide_title   = wp_unslash( $slide_title );
 			$slide_content = wp_unslash( $slide_content );
+			$slide_url     = wp_unslash( $slide_url );
 			global $wpdb;
 
 			if ( $slide_id ) {
-				$query = "UPDATE {$wpdb->prefix}cocojambo_panel SET title = %s, content = %s WHERE id = $slide_id";
+				$query = "UPDATE {$wpdb->prefix}cocojambo_panel SET title = %s, content = %s, url = %s WHERE id = $slide_id";
 			} else {
-				$query = "INSERT INTO {$wpdb->prefix}cocojambo_panel (title, content) VALUES (%s, %s)";
+				$query = "INSERT INTO {$wpdb->prefix}cocojambo_panel (title, content, url) VALUES (%s, %s, %s)";
 			}
 
 			if ( false !== $wpdb->query( $wpdb->prepare(
-					$query, $slide_title, $slide_content
+					$query, $slide_title, $slide_content, $slide_url
 				) ) ) {
 				set_transient( 'cocojambo_form_success', __( 'Slide saved', 'cocojambo' ), 30 );
 			} else {

@@ -25,35 +25,22 @@ if ( get_edit_post_link() ) : ?>
     <div class="container aos-init aos-animate" data-aos="fade-up">
         <h2><?php the_title( '<h2>', '</h2>' ); ?></h2>
         <div class="position-relative h-100">
-   <?php the_content(); ?>
+
         </div>
 
         <div class="row justify-content-between gy-4 mt-4">
 
             <div class="col-lg-8">
-                <div class="portfolio-description">
-                    <h2>Рух – це здорово!</h2>
-                    <p>
-                        Учні пришкільного табору «Краплинка» долучилися до Всеукраїнського спортивно-оздоровчого заходу
-                        «Рух – це здорово!» та провели день спорту.
-
-                    </p>
-                    <p>
-                        Під час якого було проведені різноманітні спортивні естафети.
-                    </p>
-
-
-
-                </div>
+	            <?php the_content(); ?>
             </div>
 
             <div class="col-lg-3">
                 <div class="portfolio-info">
-                    <h3>Gallery  information</h3>
+                    <h3>Де козак, там і слава</h3>
                     <ul>
-                        <li><strong>Category</strong> <span>Sport</span></li>
-                        <li><strong>Date</strong> <span>01 March, 2020</span></li>
-                        <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
+                        <li><strong>Категорії</strong> <span>Життя школи, Фотоальбом</span></li>
+                        <li><strong>Дата</strong> <span><?php the_date() ?></span></li>
+<!--                        <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>-->
                     </ul>
                 </div>
             </div>

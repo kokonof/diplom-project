@@ -46,6 +46,14 @@
 						]);?>
 					</td>
 				</tr>
+                <tr>
+                    <th>
+                        <label for="slide_url"><?php _e( 'Slide Url', 'cocojambo' ) ?></label>
+                    </th>
+                    <td>
+                        <input type="text" class="regular-text" name="slide_url" id="slide_url">
+                    </td>
+                </tr>
 			</tbody>
 		</table>
 
