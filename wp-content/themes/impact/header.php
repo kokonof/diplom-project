@@ -15,8 +15,8 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class();?>
-<section id="topbar" class="topbar d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
+<section id="topbar" class=" d-flex align-items-center ">
+    <div class="container-fluid d-flex justify-content-center justify-content-md-between topbar">
         <div class="contact-info d-flex align-items-center">
             <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
             <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
@@ -29,10 +29,10 @@
         </div>
     </div>
 </section>
-<header id="header" class="header d-flex align-items-center">
+<header id="header" class="header d-flex align-items-center sticked-login">
 	<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 		<a href="<?php echo get_option('home'); ?>" class="logo d-flex align-items-center">
-			<h1>Impact<span>.</span></h1>
+			<h1>Лідихівська<span>ЗОШ</span></h1>
 		</a>
 		<nav id="navbarn" class="navbar">
 			<?php wp_nav_menu( [

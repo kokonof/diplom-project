@@ -9,30 +9,30 @@
 
 			<div class="row gy-4">
 				<div class="col-lg-6">
-					<h3>Voluptatem dignissimos provident quasi corporis</h3>
-					<img src="<?php echo get_template_directory_uri();?>/assets/img/about.jpg" class="img-fluid rounded-4 mb-4" alt="">
-					<p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
-					<p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque deleniti repellendus.</p>
+					<h3>Лідихівська ЗОШ є однією з найбільш хороших шкіл у кременецькому
+                        районі та має багатолітню історію</h3>
+					<img src="<?php echo get_template_directory_uri();?>/assets/img/Schol.jpg" class="img-fluid rounded-4 mb-4" alt="">
+					<p> що починається ще у 1980-х роках. була побудована нова шкільна будівля, яка стала основою для Лідихівської ЗОШ.</p>
+					<p>Протягом наступних десятиліть школа зазнала ряду реконструкцій та модернізацій. Нові приміщення, спортивний майданчик, комп'ютерні кабінети та лабораторії були додані для поліпшення умов навчання. Вчителі та педагоги школи працюють над впровадженням новітніх методик навчання та використанням сучасних технологій.</p>
 				</div>
 				<div class="col-lg-6">
 					<div class="content ps-0 ps-lg-5">
 						<p class="fst-italic">
-						         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-							magna aliqua.
-						</p>
+                            Лідихівська ЗОШ завжди прагне досягати високих стандартів навчання та виховання своїх учнів.
+                        </p>
 						<ul>
-							<li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-							<li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-							<li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+							<li><i class="bi bi-check-circle-fill"></i> Вона активно бере участь у різноманітних освітніх програмах, організовує конкурси, науково-дослідницькі проекти та змагання..</li>
+							<li><i class="bi bi-check-circle-fill"></i> Школа також підтримує діалог між учнями та батьками, .</li>
+							<li><i class="bi bi-check-circle-fill"></i> розробляє програми психологічної підтримки та соціального розвитку..</li>
 						</ul>
 						<p>
-						 Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-							velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-							                                                                                         </p>
+                            Протягом багатьох десятиліть Лідихівська ЗОШ зарекомендувала себе як осередок якісної освіти
+                            та підготовки молодих людей до майбутнього. Її історія є невід'ємною частиною
+                            історії міста та долучення до розвитку освіти в регіоні.
+                        </p>
 
 						<div class="position-relative mt-4">
-							<img src="<?php echo get_template_directory_uri();?>/assets/img/about-2.jpg" class="img-fluid rounded-4" alt="">
-							<a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+							<img src="<?php echo get_template_directory_uri();?>/assets/img/school.jpg" class="img-fluid rounded-4" alt="">
 						</div>
 					</div>
 				</div>
