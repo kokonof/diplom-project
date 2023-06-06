@@ -7,7 +7,7 @@ get_header();
                 <div class="container position-relative">
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-6 text-center">
-                            <h2>Blog</h2>
+                            <h2>Блог</h2>
                             <p>Odio et unde deleniti. Deserunt numquam exercitationem. Sit quaerat ipsum dolorem.</p>
                         </div>
                     </div>

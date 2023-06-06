@@ -26,7 +26,7 @@
 
         <div class="section-header">
             <?php the_title( '<h2>', '</h2>' ); ?>
-            <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p>
+            <p></p>
         </div>
 
         <div class="row gx-lg-0 gy-4">
@@ -45,7 +45,7 @@
                     <div class="info-item d-flex">
                         <i class="bi bi-envelope flex-shrink-0"></i>
                         <div>
-                            <h4>Email:</h4>
+                            <h4>Електрона пошта:</h4>
                             <p>lidyhiv_zosh@ukr.net</p>
                         </div>
                     </div><!-- End Info Item -->
@@ -88,9 +88,9 @@
                     <div class="my-3">
                         <div class="loading">Loading</div>
                         <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                        <div class="sent-message">Ваше повідомлення було відправлене. Дякую!</div>
                     </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
+                    <div class="text-center"><button type="submit">Надіслати повідомлення</button></div>
                 </form>
             </div><!-- End Contact Form -->
 

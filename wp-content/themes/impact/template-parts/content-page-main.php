@@ -4,7 +4,7 @@
 		<div class="row gy-5" data-aos="fade-in">
 			<div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
 				<h2>Запрошуємо до <span>Школи!</span></h2>
-				<p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
+				<p>Тут ви можете ознайомитися з сайтом і його пропозиціями для вас.</p>
 				<div class="d-flex justify-content-center justify-content-lg-start">
 					<a href="#box" class="btn-get-started">Познайомимось </a>
 					<a href="https://www.youtube.com/watch?v=G76s0KgFEZ4" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Перегляньте відео</span></a>
@@ -73,7 +73,7 @@
 		<div class="container" data-aos="fade-up">
 
 			<div class="section-header">
-				<h2>НАші вчителі</h2>
+				<h2>Наші вчителі</h2>
 				<p>Декілька вчителів з нашої великої дружньої команди</p>
 			</div>
 

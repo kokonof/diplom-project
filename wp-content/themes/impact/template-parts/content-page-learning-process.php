@@ -3,7 +3,7 @@
 
 		<div class="section-header">
 			<h2>Про школу</h2>
-			<p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
+			<p> Короткий опис що пропонує школа і які можливосі вона дасть дітям</p>
 		</div>
 
 		<div class="row gy-4" data-aos="fade-up" data-aos-delay="100">

@@ -5,8 +5,8 @@
             <div class="container position-relative">
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <h2>Blog</h2>
-                        <p>Odio et unde deleniti. Deserunt numquam exercitationem. Sit quaerat ipsum dolorem.</p>
+                        <h2>Блог</h2>
+                        <p>Тут будуть описи про різні свята та події школи.</p>
                     </div>
                 </div>
             </div>
@@ -14,8 +14,8 @@
         <nav>
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
-                    <li>Blog</li>
+                    <li><a href="index.html">Головна</a></li>
+                    <li>Блог</li>
                 </ol>
             </div>
         </nav>
