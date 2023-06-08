@@ -73,7 +73,8 @@
                                 <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
                             </div>
                             <p>
-                                Quas repellat voluptatem officia numquam sint aspernatur voluptas. Esse et accusantium ut unde voluptas.
+                                Вітаю вас на нашому шкільному сайті! Ми дуже раді вітати вас в нашій спільноті,
+                                де навчання, розвиток та творчість займають центральне місце.
                             </p>
                         </div>
                     </div>

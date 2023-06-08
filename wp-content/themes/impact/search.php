@@ -7,7 +7,7 @@ get_header();
                 <div class="container position-relative">
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-6 text-center">
-                            <h2>Blog</h2>
+                            <h2>Блог</h2>
                             <p>Odio et unde deleniti. Deserunt numquam exercitationem. Sit quaerat ipsum dolorem.</p>
                         </div>
                     </div>
@@ -30,7 +30,7 @@ get_header();
                         <header class="page-header">
                             <h1 class="page-title">
                                 <?php
-                                printf( esc_html__( 'Search Results for: %s', 'impact' ), '<span>' . get_search_query() . '</span>' );
+                                printf( esc_html__( 'Результати пошуку для: %s', 'impact' ), '<span>' . get_search_query() . '</span>' );
                                 ?>
                             </h1>
                         </header>

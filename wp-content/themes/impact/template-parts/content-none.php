@@ -11,7 +11,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'impact' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Нічого не знайдено', 'impact' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -34,14 +34,14 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'impact' ); ?></p>
+			<p><?php esc_html_e( 'Вибачте, але нічого не відповідає вашим умовам пошуку. Спробуйте ще раз із іншими ключовими словами..', 'impact' ); ?></p>
 			<?php
 			get_search_form();
 
 		else :
 			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'impact' ); ?></p>
+			<p><?php esc_html_e( 'Здається, ми не можемо знайти те, що ви шукаєте. Можливо, пошук може допомогти.', 'impact' ); ?></p>
 			<?php
 			get_search_form();
 

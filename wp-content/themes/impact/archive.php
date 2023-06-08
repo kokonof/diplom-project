@@ -16,8 +16,8 @@ get_header();
             <nav>
                 <div class="container">
                     <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li>Blog</li>
+                        <li><a href="index.html">Головна</a></li>
+                        <li>Блог</li>
                     </ol>
                 </div>
             </nav>

@@ -20,22 +20,19 @@
 			<div class="col-lg-2 col-6 footer-links">
 				<h4>Корисні посилання </h4>
 				<ul>
-					<li><a href="#">Додому</a></li>
-					<li><a href="#">Про нас</a></li>
-					<li><a href="#">Послуги</a></li>
-					<li><a href="#">Умови використання</a></li>
-					<li><a href="#">Політика конфіденційності</a></li>
+					<li><a href=<a href="http://wordpress/">Головна</a></li>
+					<li><a href="http://wordpress/History">Про нас</a></li>
+                    <li><a href="http://wordpress/blog">Новини</a></li>
 				</ul>
 			</div>
 
 			<div class="col-lg-2 col-6 footer-links">
 				<h4>Наші послуги</h4>
 				<ul>
-					<li><a href="#">Web Design</a></li>
-					<li><a href="#">Web Development</a></li>
-					<li><a href="#">Product Management</a></li>
-					<li><a href="#">Marketing</a></li>
-					<li><a href="#">Graphic Design</a></li>
+					<li><a href="http://wordpress/learning-process">Навчальний процес</a></li>
+					<li><a href="http://wordpress/student-achievement">Досягнення учнів</a></li>
+                    <li><a href="http://wordpress/galery-one">Фотогалерея</a></li>
+                    <li><a href="http://wordpress/contact">Контакти</a></li>
 				</ul>
 			</div>
 
@@ -44,7 +41,7 @@
 				<p>
                     Вул центральна <br>
                     с.Лідихів<br>
-                    Тернопільська обл <br><br>
+                    Тернопільська обл <br>
 					<strong>Phone:</strong>+380 662 766 218<br>
 					<strong>Email:</strong>lidyhiv_zosh@ukr.net<br>
 				</p>

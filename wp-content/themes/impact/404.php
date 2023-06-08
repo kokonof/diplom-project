@@ -61,7 +61,7 @@ get_header();
                            </div>
                            <?php
                                $tags = get_tags();
-                               $html = '  <div class="sidebar-item tags"><h3 class="sidebar-title">Tags</h3><ul class="mt-3">';
+                               $html = '  <div class="sidebar-item tags"><h3 class="sidebar-title">Теги</h3><ul class="mt-3">';
                                foreach ( $tags as $tag ) {
                                    $tag_link = get_tag_link( $tag->term_id );
                                    $html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
