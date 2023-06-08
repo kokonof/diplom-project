@@ -16,8 +16,8 @@ get_header();
             <nav>
                 <div class="container">
                     <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li>Sample Inner Page</li>
+                        <li><a href="index.html">Головна</a></li>
+                        <li>Внутрішння сторінка</li>
                     </ol>
                 </div>
             </nav>
@@ -33,11 +33,11 @@ get_header();
                    <div class="col-md-4">
                        <div class="sidebar">
                            <div class="sidebar-item search-form">
-                                <h3 class="sidebar-title">Search</h3>
+                                <h3 class="sidebar-title">Пошук</h3>
                                 <?php get_search_form();?>
                            </div>
                            <div class="sidebar-item categories">
-                               <h3 class="sidebar-title"><?php esc_html_e( 'Categories', 'impact' ); ?></h3>
+                               <h3 class="sidebar-title"><?php esc_html_e( 'Категорія', 'impact' ); ?></h3>
                                <ul class="mt-3">
                                    <?php
                                    wp_list_categories(
@@ -53,7 +53,7 @@ get_header();
                                </ul>
                            </div>
                            <div class="sidebar-item search-form">
-                               <h3 class=" post-item sidebar-title">Archives</h3>
+                               <h3 class=" post-item sidebar-title">Архів</h3>
                                <select class="form-select" name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
                                    <option value=""><?php echo esc_attr( __( 'Select Month' ) ); ?></option>
                                    <?php wp_get_archives( 'type=monthly&format=option&show_post_count=1' ); ?>
@@ -71,7 +71,8 @@ get_header();
                                echo $html;
                            ?>
                            <div class="sidebar-item recent-posts">
-                               <h3 class="sidebar-title">Recent Posts</h3>
+                               <h3 class="sidebar-title">
+                                   Останні повідомлення</h3>
                                <div class="mt-3">
                                    <?php $recent_posts = wp_get_recent_posts( array( 'numberposts' => '5' ) );
                                    foreach( $recent_posts as $recent ){ ?>
