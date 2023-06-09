@@ -21,8 +21,8 @@
     </div>
     <section id="blog" class="blog">
         <div class="container" data-aos="fade-up">
-            <div class="row g-5">
-                <div class="col-lg-8">
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
                     <article class="blog-details">
                         <div class="post-img">
 	                        <?php the_post_thumbnail('spec_thumb'); ?>
@@ -63,6 +63,15 @@
 	                        <?php echo get_the_tag_list('', ', ')?>
                         </div>
                     </article>
+                    <?php
+
+                    the_post_navigation(
+	                    array(
+		                    'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Попередній:', 'impact' ) . '</span> <span class="nav-title">%title</span>',
+		                    'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Наступний:', 'impact' ) . '</span> <span class="nav-title">%title</span>',
+	                    )
+                    );?>
+
                     <div class="post-author d-flex align-items-center">
                         <img src="<?php echo get_avatar_url( $GLOBALS['current_user'], array( 'size' => 120, 'default'=>'wavatar', ) ); ?>" class="rounded-circle flex-shrink-0" alt="">
                         <div>
@@ -78,7 +87,8 @@
                             </p>
                         </div>
                     </div>
-                    <div class="comments">
+
+                    <div class=" container comments">
                         <h4 class="comments-count">
 	                        <?php
 	                        $impact_comment_count = get_comments_number();
@@ -93,12 +103,14 @@
 		                        );
 	                        } ?>
                         </h4>
-                        <?php if ( comments_open() || get_comments_number() ) :
+                        <?php
+                        if ( comments_open() || get_comments_number() ) :
 	                        comments_template();
                         endif; ?>
                     </div>
+
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-4">
                     <div class="sidebar">
                         <div class="sidebar-item search-form">
                             <h3 class="sidebar-title">Пошук</h3>
