@@ -11,8 +11,8 @@
 				<p> завжди прагне досягати високих стандартів навчання та виховання своїх учнів.</p>
 				<div class="social-links d-flex mt-4">
 					<a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-					<a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-					<a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+					<a href="https://www.facebook.com/profile.php?id=100045865054318" class="facebook"><i class="bi bi-facebook"></i></a>
+					<a href="https://www.instagram.com/_grisha.volkov_/" class="instagram"><i class="bi bi-instagram"></i></a>
 					<a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
 				</div>
 			</div>
@@ -20,7 +20,7 @@
 			<div class="col-lg-2 col-6 footer-links">
 				<h4>Корисні посилання </h4>
 				<ul>
-					<li><a href=<a href="http://wordpress/">Головна</a></li>
+					<li><a href="http://wordpress/">Головна</a></li>
 					<li><a href="http://wordpress/History">Про нас</a></li>
                     <li><a href="http://wordpress/blog">Новини</a></li>
 				</ul>
@@ -39,9 +39,9 @@
 			<div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
 				<h4>Контакти</h4>
 				<p>
-                    Вул центральна <br>
-                    с.Лідихів<br>
-                    Тернопільська обл <br>
+                    вул. Центральна <br>
+                    с. Лідихів<br>
+                    Тернопільська обл. <br>
 					<strong>Phone:</strong>+380 662 766 218<br>
 					<strong>Email:</strong>lidyhiv_zosh@ukr.net<br>
 				</p>
@@ -53,7 +53,7 @@
 
 	<div class="container mt-4">
 		<div class="copyright">
-			&copy; Copyright <strong><span>g.volkov</span></strong>.
+			&copy; Copyright <strong><span>g.volkov</span></strong>
 		</div>
 		<div class="credits">
 			Designed by <a href=#>g.volkov</a>
